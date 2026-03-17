@@ -1,0 +1,47 @@
+@font-face {
+  font-family: "Brigesta";
+  src: url("../assets/fonts/Brigesta.ttf") format("truetype");
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Goga";
+  src: url("../assets/fonts/goga/GogaTest-Extralight.otf") format("opentype");
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Goga";
+  src: url("../assets/fonts/goga/GogaTest-Light.otf") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Goga";
+  src: url("../assets/fonts/goga/GogaTest-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Goga";
+  src: url("../assets/fonts/goga/GogaTest-Semibold.otf") format("opentype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Goga";
+  src: url("../assets/fonts/goga/GogaTest-Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "poly";
+  src: url("../assets/fonts/poly/polysanstrial-slim.otf") format("opentype");
+  font-weight: 300;
+  font-style: slim;
+}

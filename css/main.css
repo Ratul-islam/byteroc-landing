@@ -1,0 +1,17 @@
+@import url("./themes.css");
+@import url("./base.css");
+@import url("./layout.css");
+@import url("./utilities.css");
+
+@import url("./components/buttons.css");
+@import url("./components/cards.css");
+@import url("./components/carousel.css");
+@import url("./components/pills.css");
+@import url("./components/footer.css");
+
+@import url("./sections/hero.css");
+@import url("./sections/process.css");
+@import url("./sections/stats.css");
+@import url("./sections/testimonials.css");
+@import url("./sections/services.css");
+@import url("./sections/pricing.css");

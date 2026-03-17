@@ -1,0 +1,91 @@
+:root {
+  --font-goga: "Goga";
+  --font-brigesta: "brigesta";
+  --font-sans: "Inter", sans-serif;
+
+  --radius-sm: 14px;
+  --radius-md: 24px;
+  --radius-lg: 36px;
+  --radius-xl: 999px;
+
+  --max-width: 1240px;
+  --section-space: clamp(4.5rem, 8vw, 8rem);
+  --container-pad: clamp(1rem, 3vw, 2rem);
+
+  --ease-smooth: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-snappy: cubic-bezier(0.16, 1, 0.3, 1);
+
+  --shadow-soft: 0 20px 60px rgba(66, 110, 13, 0.12);
+  --shadow-card: 0 14px 34px rgba(58, 94, 14, 0.12);
+  --shadow-glow: 0 0 80px rgba(188, 255, 77, 0.35);
+}
+
+:root,
+[data-theme="light"] {
+  --color-bg: #f7fcea;
+  --color-surface: #eef8db;
+  --color-surface-2: #e4f7c1;
+  --color-surface-3: #d6f39f;
+
+  --color-brand-50: #f4ffea;
+  --color-brand-100: #ebfdd2;
+  --color-brand-200: #d8faa8;
+  --color-brand-300: #c0f06f;
+  --color-brand-400: #9ad93e;
+  --color-brand-500: #79b91e;
+  --color-brand-600: #5d8e18;
+  --color-brand-700: #3e6211;
+  --color-brand-800: #233808;
+  --color-brand-900: #071305;
+
+  --color-text: #162600;
+  --color-text-soft: #63a112;
+  --color-text-muted: #a5eb49;
+  --color-text-inverse: #f7fff0;
+
+  --color-card: rgba(248, 255, 239, 0.78);
+  --color-card-strong: rgba(238, 251, 215, 0.92);
+  --color-border: rgba(44, 75, 17, 0.12);
+  --color-shadow: rgba(66, 110, 13, 0.12);
+  --color-overlay: rgba(3, 21, 2, 0.72);
+  --color-highlight: #c4ff67b3;
+
+  --text-primary: #2d4a22;
+  --text-main: #162600;
+  --text-dim: rgba(255, 255, 255, 0.7);
+  --text-white: #ffffff;
+  --text-dark: #162600;
+  --text-color: #162600;
+
+  --white: #ffffff;
+  --dark: #161d0f;
+  --medium: #63a112;
+  --light: #9ad93e;
+  --green-accent: #63a112;
+  --brand-green: #9ad93e;
+  --card-white: #ffffff;
+}
+
+[data-theme="dark"] {
+  --color-bg: #071305;
+  --color-surface: #0a2206;
+  --color-surface-2: #14340c;
+  --color-surface-3: #1f4a12;
+
+  --color-text: #f7fff0;
+  --color-text-soft: #c0f06f;
+  --color-text-muted: #9ad93e;
+  --color-text-inverse: #071305;
+
+  --text-primary: #d8faa8;
+  --text-main: #f7fff0;
+  --text-dim: rgba(247, 255, 240, 0.7);
+  --text-white: #f7fff0;
+  --text-dark: #071305;
+  --text-color: #f7fff0;
+
+  --white: #f7fff0;
+  --dark: #071305;
+  --medium: #79b91e;
+  --light: #9ad93e;
+}

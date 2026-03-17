@@ -1,0 +1,159 @@
+.-section {
+  padding: 100px 0;
+  width: 100vw;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  background-color: var(--color-text);
+}
+
+.scrolling-track {
+  display: flex;
+  gap: 20px;
+  width: max-content;
+  animation: scrollInfinite 30s linear infinite;
+  padding: 40px 20px;
+}
+
+.scrolling-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes scrollInfinite {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+
+.scrolling-section {
+  padding: 100px 0;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  background-color: var(--color-text);
+}
+
+.scrolling-track {
+  display: flex;
+  gap: 20px;
+  width: max-content;
+  padding: 40px 20px;
+  will-change: transform;
+}
+.testimonial {
+  background-image: url("../../assets/strip-bg.webp");
+  background-size: cover;
+  background-position: center;
+}
+
+.testimonial-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.star-rating {
+  margin: auto;
+  margin-bottom: 1rem;
+}
+
+.main-title {
+  font-family: var(--font-goga);
+  font-weight: 800;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  line-height: 1.2;
+  color: var(--color-text-soft);
+  margin-bottom: 4rem;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 24px;
+}
+
+.testimonial-card {
+  background: #f4fce852;
+  backdrop-filter: blur(10px);
+  border-radius: 28px;
+  padding: 2.8rem;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.quote {
+  font-family: var(--font-goga);
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: var(--text-primary);
+  margin-bottom: 2.5rem;
+  text-align: left;
+}
+
+.author-info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.author-img {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.author-meta {
+  display: flex;
+  flex-direction: column;
+  font-size: 1rem;
+  line-height: 1.2;
+}
+
+.author-name,
+.author-brand {
+  font-family: var(--font-goga);
+  color: var(--color-text-soft);
+  font-weight: 700;
+  font-size: clamp(20px, 5vw, 25px);
+}
+
+.pagination-nav {
+  margin-top: 60px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.pagination-nav .dot {
+  width: 10px;
+  height: 10px;
+  background: rgba(45, 74, 34, 0.2);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.pagination-nav .dot.active {
+  background: var(--text-primary);
+}
+
+.divider {
+  background-image: url("../../assets/verse.webp");
+  height: 126px;
+  width: 100vw;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@media (max-width: 480px) {
+  .testimonial-card { padding: 2rem; }
+  .card-grid { grid-template-columns: 1fr; }
+}

@@ -1,0 +1,6 @@
+.italic,
+.serif-italic {
+  font-family: var(--font-brigesta);
+  font-style: italic;
+  font-weight: 400;
+}

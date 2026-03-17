@@ -1,0 +1,93 @@
+.page-transition {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(196, 255, 103, 0.22), transparent 34%), #020a02;
+  z-index: 100;
+  pointer-events: none;
+  transform-origin: top;
+  animation: revealPage 1.2s var(--ease-smooth) forwards;
+}
+
+@keyframes revealPage {
+  0% { opacity: 1; transform: scaleY(1); }
+  60% { opacity: 1; }
+  100% { opacity: 0; transform: scaleY(0); }
+}
+
+#hero {
+  background-image: url("../../assets/hero/hero-bg.webp");
+  background-position: center;
+  background-size: cover;
+  padding-top: clamp(50px, 10vw, 124px);
+  overflow: hidden;
+}
+
+.main-logo {
+  min-width: 100px;
+  width: 30vw;
+  max-width: 263px;
+  margin: auto;
+  margin-bottom: clamp(40px, 6vw, 94px);
+}
+
+.hero-headings h2 {
+  font-weight: 300;
+  text-align: center;
+  line-height: clamp(80px, 9vw, 153px);
+  font-family: var(--font-goga);
+  font-size: clamp(30px, 9vw, 123px);
+  margin: 0;
+  color: var(--color-text);
+}
+
+.hero-headings h2 span { font-family: var(--font-brigesta); }
+
+.hero-headings > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: clamp(10px, 2vw, 25.81px);
+}
+
+.hero-headings > div > div { display: flex; }
+
+.icon-row > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: white;
+  width: clamp(40px, 6vw, 100px);
+  aspect-ratio: 1;
+  border-radius: 50px;
+  position: relative;
+  box-shadow: 3px 3px 10px 5px #00000026;
+}
+
+.icon-row div:first-child img { width: clamp(15px, 3vw, 37px); }
+.icon-row div:nth-child(2) img { width: clamp(25px, 4vw, 55px); }
+.icon-row div:nth-child(3) img { width: clamp(30px, 5vw, 65px); }
+
+.icon-row div:first-child { z-index: 20; }
+.icon-row div:nth-child(2) { z-index: 19; transform: translateX(-10px); }
+.icon-row div:nth-child(3) { transform: translateX(-20px); }
+
+.samples-section {
+  max-height: 812px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  padding-top: 100px;
+}
+
+.samples-section img {
+  max-width: 253px;
+  border-radius: 11px;
+  box-shadow: 39.86px 22.53px 48.52px -22.53px #0000004d;
+  position: relative;
+}
+
+.samples-section div:first-child img { transform: rotate(-7.2deg); z-index: 10; }
+.samples-section div:nth-child(2) img { transform: rotate(9.8deg) translate(-150px, -30px); }
+.samples-section div:nth-child(3) img { transform: rotate(-7.2deg) translateY(120px); }
+.samples-section div:nth-child(4) img { transform: rotate(6deg) translate(-145px, 90px); }
+.samples-section div:nth-child(5) img { transform: rotate(-4.38deg); }
