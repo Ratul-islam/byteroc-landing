@@ -1,109 +1,84 @@
-const imageUrls = [
-  "../assets/carasoul/carasoul-1.png",
-  "../assets/carasoul/carasoul-2.png",
-  "../assets/carasoul/carasoul-3.png",
-  "../assets/carasoul/carasoul-4.png",
-  "../assets/carasoul/carasoul-5.png"
-];
 
-const carousel = document.getElementById("carousel");
-const track = document.getElementById("track");
+const viewport = document.getElementById('viewport');
+const track = document.getElementById('track');
 
-let speedPxPerSec = 55;
-let x = 0;
-let lastTime = 0;
-let paused = false;
-let oneSetWidth = 0;
+// 1. Clone enough boxes to completely cover even the widest 4K monitors
+const originalHTML = track.innerHTML;
+// 4 sets guarantees the math wraps entirely off-screen, making it invisible
+track.innerHTML = originalHTML + originalHTML + originalHTML + originalHTML; 
 
-carousel.addEventListener("mouseenter", () => (paused = true));
-carousel.addEventListener("mouseleave", () => (paused = false));
+const allBoxes = Array.from(track.children);
 
-function createCard(url, idx) {
-  const card = document.createElement("div");
-  card.className = "cara-card";
-  const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
-  svg.setAttribute("viewBox", "0 0 1000 1700");
-  const clipId = `clip-${idx}-${Math.random().toString(36).slice(2, 8)}`;
-  svg.innerHTML = `
-    <defs>
-      <clipPath id="${clipId}" clipPathUnits="objectBoundingBox">
-        <path id="p-${idx}" d=""></path>
-      </clipPath>
-    </defs>
-    <image class="img" href="${url}" x="0" y="0" width="1000" height="1400" preserveAspectRatio="xMidYMid slice" clip-path="url(#${clipId})"></image>
-  `;
-  card.appendChild(svg);
-  return card;
-}
+// 2. Setup Dimensions
+const boxWidth = 250;
+const gap = 30; // 15px visual gap on each side
+const itemWidth = boxWidth + gap; 
+const totalWidth = allBoxes.length * itemWidth;
+const halfTotal = totalWidth / 2;
 
-function buildOneSet(setIndex) {
-  const set = document.createElement("div");
-  set.className = "set";
-  imageUrls.forEach((url, i) => set.appendChild(createCard(url, `${setIndex}-${i}`)));
-  return set;
-}
+// 3. Assign Base Coordinates
+allBoxes.forEach((box, i) => {
+  box.dataset.basePos = i * itemWidth;
+});
 
-function ensureEnoughSets() {
-  while (track.children.length < 3) track.appendChild(buildOneSet(track.children.length));
-  oneSetWidth = track.children[0].getBoundingClientRect().width;
-  const neededWidth = carousel.clientWidth + oneSetWidth * 2;
-  let totalWidth = [...track.children].reduce((sum, el) => sum + el.getBoundingClientRect().width, 0);
-  while (totalWidth < neededWidth) {
-    const set = buildOneSet(track.children.length);
-    track.appendChild(set);
-    totalWidth += set.getBoundingClientRect().width;
-  }
-}
+// Lerp & Drag Variables
+let currentX = 0;
+let targetX = 0;
+let isDragging = false;
+let lastClientX = 0;
 
-function roundedTrapezoidPath(topLeftY, topRightY, bottomRightY, bottomLeftY, r = 0.07) {
-  const x0 = 0, x1 = 1, y0 = topLeftY, y1 = topRightY, y2 = bottomRightY, y3 = bottomLeftY;
-  return `M ${x0 + r} ${y0} L ${x1 - r} ${y1} C ${x1 - r / 2} ${y1} ${x1} ${y1 + r / 2} ${x1} ${y1 + r} L ${x1} ${y2 - r} C ${x1} ${y2 - r / 2} ${x1 - r / 2} ${y2} ${x1 - r} ${y2} L ${x0 + r} ${y3} C ${x0 + r / 2} ${y3} ${x0} ${y3 - r / 2} ${x0} ${y3 - r} L ${x0} ${y0 + r} C ${x0} ${y0 + r / 2} ${x0 + r / 2} ${y0} ${x0 + r} ${y0} Z`.replace(/\s+/g, " ").trim();
-}
+// 4. The Cylinder Math (The Magic Loop)
+const render = () => {
+  // Lerp for buttery inertia
+  currentX += (targetX - currentX) * 0.1;
 
-function updateWarp() {
-  const cards = track.querySelectorAll(".cara-card");
-  const rect = carousel.getBoundingClientRect();
-  const cx = rect.left + rect.width / 2;
-  const hw = rect.width / 2 || 1;
+  allBoxes.forEach(box => {
+    const basePos = parseFloat(box.dataset.basePos);
+    const pos = basePos + currentX;
 
-  cards.forEach((card) => {
-    const r = card.getBoundingClientRect();
-    const left = r.left, right = r.right, center = (left + right) / 2;
-    const getPinch = (xx) => Math.max(0, (1 - Math.abs((xx - cx) / hw)) * 0.17);
-    const lp = getPinch(left);
-    const rp = getPinch(right);
-    const pathD = roundedTrapezoidPath(lp, rp, 1 - rp, 1 - lp, 0.07);
-    const path = card.querySelector("path[id^='p-']");
-    if (path) path.setAttribute("d", pathD);
+    // This modulo equation locks the boxes onto a continuous cylinder.
+    // When a box goes too far left, it instantly teleports to the far right,
+    // safely hidden off-screen.
+    const wrappedPos = ((pos + halfTotal) % totalWidth + totalWidth) % totalWidth - halfTotal;
+
+    box.style.transform = `translate3d(${wrappedPos}px, 0, 0)`;
   });
-}
 
-function tick(ts) {
-  if (!lastTime) lastTime = ts;
-  const dt = (ts - lastTime) / 1000;
-  lastTime = ts;
+  requestAnimationFrame(render);
+};
 
-  if (!paused) {
-    x -= speedPxPerSec * dt;
-    while (Math.abs(x) >= oneSetWidth) {
-      x += oneSetWidth;
-      track.appendChild(track.firstElementChild);
-    }
-  }
+// Start rendering
+requestAnimationFrame(render);
 
-  track.style.transform = `translateX(${x}px)`;
-  updateWarp();
-  requestAnimationFrame(tick);
-}
+// 5. Drag Logic
+const handlePointerDown = (clientX) => {
+  isDragging = true;
+  viewport.classList.add('active');
+  lastClientX = clientX;
+};
 
-function initCarousel() {
-  track.innerHTML = "";
-  x = 0;
-  lastTime = 0;
-  ensureEnoughSets();
-  updateWarp();
-  requestAnimationFrame(tick);
-}
+const handlePointerMove = (clientX) => {
+  if (!isDragging) return;
+  const deltaX = clientX - lastClientX;
+  targetX += deltaX * 1.5; // Multiply by 1.5 for a faster spin
+  lastClientX = clientX;
+};
 
-window.addEventListener("resize", initCarousel);
-window.addEventListener("load", initCarousel);
+const handlePointerUp = () => {
+  isDragging = false;
+  viewport.classList.remove('active');
+};
+
+// Mouse Events
+viewport.addEventListener('mousedown', (e) => handlePointerDown(e.pageX));
+window.addEventListener('mousemove', (e) => handlePointerMove(e.pageX));
+window.addEventListener('mouseup', handlePointerUp);
+window.addEventListener('mouseleave', handlePointerUp);
+
+// Touch Events
+viewport.addEventListener('touchstart', (e) => handlePointerDown(e.touches[0].pageX));
+window.addEventListener('touchmove', (e) => {
+  if (isDragging) e.preventDefault();
+  handlePointerMove(e.touches[0].pageX);
+}, { passive: false });
+window.addEventListener('touchend', handlePointerUp);

@@ -6,7 +6,7 @@
 
 .services-header h2 {
   font-family: var(--font-goga);
-  font-size: clamp(2.2rem, 5vw, 3.8rem);
+  font-size: clamp(2rem, 5vw, 3.8rem);
   font-weight: 800;
   line-height: 1.1;
   color: var(--color-text-soft);
@@ -80,7 +80,7 @@
 .col-title {
   font-family: var(--font-goga);
   font-weight: 700;
-  font-size: 25px;
+  font-size: clamp(15px, 2vw, 25px);
   line-height: 120%;
   margin-top: 10px;
 }
@@ -88,7 +88,7 @@
 .col-list {
   font-family: var(--font-goga);
   font-weight: 400;
-  font-size: 15px;
+  font-size: clamp(9px, 1vw,15px);
   line-height: 150%;
   text-transform: capitalize;
 }
