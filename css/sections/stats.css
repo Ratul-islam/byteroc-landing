@@ -7,7 +7,7 @@
 
 .stats-container {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 11px;
   border-radius: 20px;
   overflow: hidden;
@@ -19,12 +19,34 @@
   background-color: #f4fce8;
   height: clamp(180px, 30vw, 220px);
   width: clamp(400px, 50vw, 586px);
-  padding: 36px 40px;
+  padding: 30px 40px;
   position: relative;
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  transform: translateY(28px);
+  opacity: 0;
+  transition:
+    transform 700ms cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 700ms ease;
 }
+
+.stats.is-visible .stat-card {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.stats.is-visible .stat-card:nth-child(2) {
+  transition-delay: 80ms;
+}
+.stats.is-visible .stat-card:nth-child(3) {
+  transition-delay: 160ms;
+}
+.stats.is-visible .stat-card:nth-child(4) {
+  transition-delay: 240ms;
+}
+
+
 
 .stat-desc {
   color: var(--text-color);
@@ -36,6 +58,7 @@
   line-height: 120%;
 }
 
+
 .stat-num {
   position: absolute;
   color: var(--color-text-muted);
@@ -44,14 +67,43 @@
   font-weight: 700;
   font-size: clamp(120px, 30vw, 185.53px);
   line-height: 130%;
+  letter-spacing: -0.02em;
+  user-select: none;
+  pointer-events: none;
+  opacity: 0.95;
 }
+
 
 .top-num { text-align: right; }
 .top-num .stat-num { bottom: -40%; }
 .bottom-num .stat-num { bottom: -50%; right: 8%; }
 
+
+
 @media (max-width: 900px) {
   .stats-container {
     grid-template-columns: 1fr;
   }
+
+  .stat-card {
+    height: clamp(170px, 44vw, 210px);
+  }
+
+  .top-num .stat-num,
+  .bottom-num .stat-num {
+    bottom: -24%;
+    right: 5%;
+  }
 }
+
+@media (prefers-reduced-motion: reduce) {
+  .stat-card {
+    transition: none;
+    transform: none;
+    opacity: 1;
+  }
+}
+
+
+
+

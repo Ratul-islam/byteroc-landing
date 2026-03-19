@@ -25,7 +25,9 @@
 }
 
 .footer-top {
+  display: flex;
   margin-bottom: 80px;
+  justify-content: space-between;
 }
 
 .footer-top h2 {
@@ -100,4 +102,17 @@
   .footer-inner {
     padding: 0 20px;
   }
+}
+.footer-logo {
+  
+  width: clamp(40px, 7vw, 100px);
+  height: clamp(40px, 7vw, 100px);
+  background-color: var(--color-text-soft);
+  border-radius: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.footer-logo img{
+  width: 60%;
 }

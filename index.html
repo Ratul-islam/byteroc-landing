@@ -18,57 +18,93 @@
 </head>
 
 <body>
+    
+
+
     <section id="hero">
         <img class="main-logo" data-animate src="./assets/main.png" />
         <div class="hero-headings">
-            <h2>
-                Turning <span data-reveal>Creative</span>
-            </h2>
-
-            <h2>
-                Breakthroughs into
-            </h2>
+            <h2>Turning <span data-reveal>Creative</span></h2>
+            <h2>Breakthroughs into</h2>
             <div class="hero-last-line">
-                <h2>
-                    <span data-reveal>Impact</span> Mines
-                </h2>
+                <h2><span data-reveal>Impact</span> Mines</h2>
                 <div class="icon-row">
-                    <div>
-                        <img src="./assets/hero/figma.png" alt="figma icon">
-                    </div>
-                    <div>
-                        <img src="./assets/hero/monkey.png" alt="monkey icon">
-                    </div>
-                    <div>
-                        <img src="./assets/hero/klaviyo.png" alt="klaviyo icon">
-                    </div>
+                    <div><img src="./assets/hero/figma.png" alt="figma icon"></div>
+                    <div><img src="./assets/hero/monkey.png" alt="monkey icon"></div>
+                    <div><img src="./assets/hero/klaviyo.png" alt="klaviyo icon"></div>
                 </div>
             </div>
         </div>
 
-
         <div class="samples-section">
             <div>
-                <img src="./assets/hero/hero1.webp">
+                <img src="./assets/hero/hero1.webp" alt="sample 1" 
+                     data-category="E-Commerce Redesign"
+                     data-title="Nike Global App"
+                     data-stack1="./assets/hero/imageset/first-1.webp" data-stack2="./assets/hero/imageset/first-4.webp" 
+                     data-stack3="./assets/hero/imageset/first-3.webp" data-stack4="./assets/hero/imageset/first-2.webp">
             </div>
+            
             <div>
+                <img src="./assets/hero/hero2.webp" alt="sample 2" 
+                     data-category="Web3 Marketplace"
+                     data-title="Pallet Ross"
+                     data-stack1="./assets/hero/imageset/sec-1.webp" data-stack2="./assets/hero/imageset/sec-2.webp" 
+                     data-stack3="./assets/hero/imageset/sec-3.webp" data-stack4="./assets/hero/imageset/sec-4.webp">
+            </div>
 
-                <img src="./assets/hero/hero2.webp">
+            <div>
+                <img src="./assets/hero/hero3.webp" alt="sample 3" 
+                     data-category="Fintech Platform"
+                     data-title="Project Alpha"
+                     data-stack1="./assets/hero/imageset/four-1.webp" data-stack2="./assets/hero/imageset/four-2.webp" 
+                     data-stack3="./assets/hero/imageset/four-3.webp" data-stack4="./assets/hero/imageset/four-4.webp">
             </div>
             <div>
-
-                <img src="./assets/hero/hero3.webp">
+                <img src="./assets/hero/hero4.webp" alt="sample 4" 
+                     data-category="Brand Identity"
+                     data-title="Project Beta"
+                     data-stack1="./assets/hero/imageset/third-1.webp" data-stack2="./assets/hero/imageset/third-2.webp" 
+                     data-stack3="./assets/hero/imageset/third-3.webp" data-stack4="./assets/hero/imageset/third-4.webp">
             </div>
             <div>
-
-                <img src="./assets/hero/hero4.webp">
-            </div>
-            <div>
-                <img src="./assets/hero/hero5.webp">
+                <img src="./assets/hero/hero5.webp" alt="sample 5" 
+                     data-category="SaaS Dashboard"
+                     data-title="Project Gamma"
+                     data-stack1="./assets/hero/imageset/fif-1.webp" data-stack2="./assets/hero/imageset/fif-2.webp" 
+                     data-stack3="./assets/hero/imageset/fif-3.webp" data-stack4="./assets/hero/imageset/fif-4.webp">
             </div>
         </div>
     </section>
 
+    <div id="project-modal" class="project-modal">
+        <div class="modal-overlay" onclick="closeModal()"></div>
+        
+        <div class="modal-content-wrapper">
+            <div class="modal-top-bar">
+                <button class="btn-close-text" onclick="closeModal()">Close</button>
+            </div>
+            
+            <div class="modal-text-content">
+                <p id="modal-category" class="category-tag">Category</p>
+                <h2 id="modal-title">Project Title</h2>
+            </div>
+
+            <div class="modal-spacer"></div>
+
+            <div class="modal-bottom-content">
+                <button class="btn-primary">View Case Study</button>
+            </div>
+        </div>
+
+        <div class="modal-stack" id="modal-stack">
+            <img src="" id="modal-stack-1" class="modal-card modal-s1" alt="">
+            <img src="" id="modal-stack-2" class="modal-card modal-s2" alt="">
+            <img src="" id="modal-stack-3" class="modal-card modal-s3" alt="">
+            <img src="" id="modal-stack-4" class="modal-card modal-s4" alt="">
+            <img src="" id="modal-center-image" class="modal-main" alt="Clicked Artwork">
+        </div>
+    </div>
 
 
     <section class="process-section">
@@ -76,7 +112,8 @@
             <h2 class="headline">
                 Our design is <span data-reveal class="italic">human-centric</span>.<br />
                 We develop functional <span data-reveal class="italic">processes</span> that<br />
-                improve <span data-reveal class="italic">products</span> and <span data-reveal class="italic">services</span>.
+                improve <span data-reveal class="italic">products</span> and <span data-reveal
+                    class="italic">services</span>.
             </h2>
 
             <div class="steps">
@@ -117,29 +154,34 @@
             </div>
 
         </div>
+
         <div class="comp"></div>
 
 
-        <div class="stats">
+        <div class="stats" id="statsSection">
             <div class="stats-container">
                 <div class="stat-card top-num">
                     <p class="stat-desc">Email Marketing brands<br>launched that make mark online.</p>
-                    <div class="stat-num ">17+</div>
+                    <div class="stat-num" data-count-to="17" data-suffix="+">0+</div>
                 </div>
-                <div class="stat-card  top-num">
+
+                <div class="stat-card top-num">
                     <p class="stat-desc">Users reached Our designs<br>engage millions globally.</p>
-                    <div class="stat-num">15M</div>
+                    <div class="stat-num" data-count-to="15" data-suffix="M">0M</div>
                 </div>
+
                 <div class="stat-card bottom-num">
                     <p class="stat-desc">We build long-term partnerships<br>through proven results.</p>
-                    <div class="stat-num ">95%</div>
+                    <div class="stat-num" data-count-to="95" data-suffix="%">0%</div>
                 </div>
+
                 <div class="stat-card bottom-num">
                     <p class="stat-desc">Decades of experience in<br>impactful solutions.</p>
-                    <div class="stat-num ">08+</div>
+                    <div class="stat-num" data-count-to="8" data-suffix="+">00+</div>
                 </div>
             </div>
         </div>
+
     </section>
 
 
@@ -205,10 +247,12 @@
 
     <section class="process">
         <h1>
-            To Drive Sustainable <span data-reveal class="goga-italic">Gowth</span> for <span data-reveal class="goga-italic">Global</span>
+            To Drive Sustainable <span data-reveal class="goga-italic">Gowth</span> for <span data-reveal
+                class="goga-italic">Global</span>
             Brands
             Through Retention-Driven <span data-reveal class="goga-italic">Marketing</span>
         </h1>
+
 
         <div class="middle-flow">
             <div class="left">
@@ -392,7 +436,39 @@
                         <img src="/assets/main.png" alt="ByteRoc logo">
                     </div>
                 </div>
-                <img src="/assets/vine.png" alt="ByteRoc logo">
+                <div class="vine">
+                    <svg width="1015" height="307" viewBox="0 0 1015 307" fill="none" xmlns="http://www.w3.org/2000/svg"
+                        style="background: transparent;">
+
+                        <path class="track"
+                            d="M1014.78 305.704H985.106C985.106 305.704 950.494 309.774 907.645 245.311C864.796 180.848 787.336 158.595 730.623 158.595C673.942 158.595 586.233 158.595 586.233 158.595"
+                            stroke="#A4EB47" stroke-width="2.17559" stroke-miterlimit="10" fill="none" />
+                        <path class="track"
+                            d="M1014.78 1.13903H985.106C985.106 1.13903 950.494 -2.93049 907.645 61.5325C864.796 125.996 787.336 148.248 730.623 148.248C673.942 148.248 586.233 148.248 586.233 148.248"
+                            stroke="#A4EB47" stroke-width="2.17559" stroke-miterlimit="10" fill="none" />
+                        <path class="track" d="M1014.78 153.4H586.265" stroke="#63A112" stroke-width="2.17559"
+                            stroke-miterlimit="10" fill="none" />
+                        <path class="track"
+                            d="M0.000885564 1.13947L29.6774 1.13947C29.6774 1.13947 64.2896 -2.93005 107.138 61.533C149.987 125.996 227.448 148.249 284.16 148.249C340.841 148.249 428.551 148.249 428.551 148.249"
+                            stroke="#A4EB47" stroke-width="2.17559" stroke-miterlimit="10" fill="none" />
+                        <path class="track"
+                            d="M0.000872708 305.704L29.6774 305.704C29.6774 305.704 64.2896 309.774 107.138 245.311C149.987 180.848 227.448 158.595 284.16 158.595C340.841 158.595 428.551 158.595 428.551 158.595"
+                            stroke="#A4EB47" stroke-width="2.17559" stroke-miterlimit="10" fill="none" />
+                        <path class="track" d="M7.32718e-05 153.443L428.519 153.443" stroke="#63A112"
+                            stroke-width="2.17559" stroke-miterlimit="10" fill="none" />
+
+                        <path class="glow-beam"
+                            d="M1014.78 305.704H985.106C985.106 305.704 950.494 309.774 907.645 245.311C864.796 180.848 787.336 158.595 730.623 158.595C673.942 158.595 586.233 158.595 586.233 158.595" />
+                        <path class="glow-beam"
+                            d="M1014.78 1.13903H985.106C985.106 1.13903 950.494 -2.93049 907.645 61.5325C864.796 125.996 787.336 148.248 730.623 148.248C673.942 148.248 586.233 148.248 586.233 148.248" />
+                        <path class="glow-beam" d="M1014.78 153.4H586.265" />
+                        <path class="glow-beam"
+                            d="M0.000885564 1.13947L29.6774 1.13947C29.6774 1.13947 64.2896 -2.93005 107.138 61.533C149.987 125.996 227.448 148.249 284.16 148.249C340.841 148.249 428.551 148.249 428.551 148.249" />
+                        <path class="glow-beam"
+                            d="M0.000872708 305.704L29.6774 305.704C29.6774 305.704 64.2896 309.774 107.138 245.311C149.987 180.848 227.448 158.595 284.16 158.595C340.841 158.595 428.551 158.595 428.551 158.595" />
+                        <path class="glow-beam" d="M7.32718e-05 153.443L428.519 153.443" />
+                    </svg>
+                </div>
             </div>
             <div class="right">
 
@@ -427,7 +503,7 @@
                                 d="M96.4245 87.8577H96.3543C95.6516 87.8577 95.0052 88.2053 94.4149 88.8715V88.6977C94.4149 88.2778 94.0777 87.9302 93.6702 87.9302C93.2626 87.9302 92.9253 88.2778 92.9394 88.6977V94.5341C92.9534 94.954 93.3048 95.2871 93.7123 95.2582C94.0917 95.2437 94.4009 94.9251 94.4149 94.5341V90.4356C94.8928 89.726 95.5673 89.3349 96.3262 89.3349H96.3965C96.7899 89.3639 97.1132 89.0598 97.1413 88.6543C97.1413 88.6398 97.1413 88.6254 97.1413 88.6109C97.1553 88.2053 96.8321 87.8577 96.4386 87.8433C96.4386 87.8577 96.4245 87.8577 96.4245 87.8577Z"
                                 fill="#111111" />
                             <path
-                                d="M116.325 79.438H101.679C100.537 79.438 99.6143 80.3991 99.6143 81.5897V95.2603L102.464 92.3196H116.338C117.481 92.3196 118.403 91.3585 118.403 90.1679V81.5897C118.389 80.3991 117.467 79.438 116.325 79.438ZM104.005 89.0777C104.005 89.3933 103.757 89.6514 103.455 89.6514C103.152 89.6514 102.904 89.3933 102.904 89.0777V82.9811C102.904 82.6656 103.152 82.4073 103.455 82.4073C103.757 82.4073 104.005 82.6656 104.005 82.9811V89.0777ZM106.565 89.0777C106.565 89.3933 106.318 89.6514 106.015 89.6514C105.712 89.6514 105.464 89.3933 105.464 89.0777V85.0468C105.464 84.7312 105.712 84.473 106.015 84.473C106.318 84.473 106.565 84.7312 106.565 85.0468V89.0777ZM106.634 83.2107C106.634 83.555 106.373 83.8275 106.042 83.8275H105.987C105.657 83.8275 105.395 83.555 105.395 83.2107V83.1676C105.395 82.8234 105.657 82.5508 105.987 82.5508H106.042C106.373 82.5508 106.634 82.8234 106.634 83.1676V83.2107ZM110.516 89.508C110.268 89.6371 109.993 89.6945 109.704 89.6945C108.754 89.6945 108.245 89.2211 108.245 88.3174V85.5489H107.749C107.584 85.5489 107.446 85.4198 107.446 85.2476V85.2333C107.446 85.1328 107.501 85.0325 107.584 84.9607L108.809 83.7127C108.878 83.641 108.961 83.598 109.057 83.5836C109.222 83.5836 109.373 83.7271 109.373 83.8992C109.373 83.8992 109.373 83.8992 109.373 83.9136V84.516H110.254C110.53 84.516 110.75 84.7455 110.75 85.0325C110.75 85.3193 110.53 85.5489 110.254 85.5489H109.373V88.2456C109.373 88.633 109.566 88.6617 109.828 88.6617C109.938 88.6617 110.048 88.6473 110.144 88.6186C110.213 88.5899 110.296 88.5899 110.365 88.5756C110.612 88.5756 110.819 88.7907 110.833 89.0633C110.805 89.2498 110.681 89.4363 110.516 89.508ZM113.888 88.6186C114.287 88.633 114.687 88.5326 115.045 88.3461C115.113 88.3031 115.196 88.2887 115.264 88.2887C115.54 88.2887 115.76 88.5039 115.76 88.7907C115.76 88.7907 115.76 88.7907 115.76 88.8051C115.746 89.006 115.637 89.1924 115.457 89.2785C115.072 89.508 114.659 89.7088 113.806 89.7088C112.264 89.7088 111.328 88.719 111.328 87.0694C111.328 85.1328 112.567 84.4299 113.613 84.4299C115.183 84.4299 115.898 85.7354 115.898 86.9403C115.912 87.2415 115.678 87.4997 115.389 87.5141C115.375 87.5141 115.361 87.5141 115.347 87.5141H112.457C112.608 88.2313 113.104 88.6186 113.888 88.6186Z"
+                                d="M116.325 79.438H101.679C100.537 79.438 99.6143 80.3991 99.6143 81.5897V95.2603L102.464 92.3196H116.338C117.481 92.3196 118.403 91.3585 118.403 90.1679V81.5897C118.389 80.3991 117.467 79.438 116.325 79.438ZM104.005 89.0777C104.005 89.3933 103.757 89.6514 103.455 89.6514C103.152 89.6514 102.904 89.3933 102.904 89.0777V82.9811C102.904 82.6656 103.152 82.4073 103.455 82.4073C103.757 82.4073 104.005 82.6656 104.005 82.9811V89.0777ZM106.565 89.0777C106.565 89.3933 106.318 89.6514 106.015 89.6514C106.015 89.6514 105.464 89.3933 105.464 89.0777V85.0468C105.464 84.7312 105.712 84.473 106.015 84.473C106.318 84.473 106.565 84.7312 106.565 85.0468V89.0777ZM106.634 83.2107C106.634 83.555 106.373 83.8275 106.042 83.8275H105.987C105.657 83.8275 105.395 83.555 105.395 83.2107V83.1676C105.395 82.8234 105.657 82.5508 105.987 82.5508H106.042C106.373 82.5508 106.634 82.8234 106.634 83.1676V83.2107ZM110.516 89.508C110.268 89.6371 109.993 89.6945 109.704 89.6945C108.754 89.6945 108.245 89.2211 108.245 88.3174V85.5489H107.749C107.584 85.5489 107.446 85.4198 107.446 85.2476V85.2333C107.446 85.1328 107.501 85.0325 107.584 84.9607L108.809 83.7127C108.878 83.641 108.961 83.598 109.057 83.5836C109.222 83.5836 109.373 83.7271 109.373 83.8992C109.373 83.8992 109.373 83.8992 109.373 83.9136V84.516H110.254C110.53 84.516 110.75 84.7455 110.75 85.0325C110.75 85.3193 110.53 85.5489 110.254 85.5489H109.373V88.2456C109.373 88.633 109.566 88.6617 109.828 88.6617C109.938 88.6617 110.048 88.6473 110.144 88.6186C110.213 88.5899 110.296 88.5899 110.365 88.5756C110.612 88.5756 110.819 88.7907 110.833 89.0633C110.805 89.2498 110.681 89.4363 110.516 89.508ZM113.888 88.6186C114.287 88.633 114.687 88.5326 115.045 88.3461C115.113 88.3031 115.196 88.2887 115.264 88.2887C115.54 88.2887 115.76 88.5039 115.76 88.7907C115.76 88.7907 115.76 88.7907 115.76 88.8051C115.746 89.006 115.637 89.1924 115.457 89.2785C115.072 89.508 114.659 89.7088 113.806 89.7088C112.264 89.7088 111.328 88.719 111.328 87.0694C111.328 85.1328 112.567 84.4299 113.613 84.4299C115.183 84.4299 115.898 85.7354 115.898 86.9403C115.912 87.2415 115.678 87.4997 115.389 87.5141C115.375 87.5141 115.361 87.5141 115.347 87.5141H112.457C112.608 88.2313 113.104 88.6186 113.888 88.6186Z"
                                 fill="#09C269" />
                             <path
                                 d="M113.699 85.371C113.062 85.3547 112.528 85.8913 112.47 86.6067H114.942C114.87 85.8913 114.335 85.3547 113.699 85.371Z"
@@ -555,66 +631,50 @@
             </div>
         </div>
 
-
-
-<div class="curve-section">
-  <div class="boxes-viewport" id="viewport">
-    <div class="scroll-track" id="track">
-      <div class="curve-box" style="background-image: url('assets/carasoul/carasoul-1.png')"></div>
-      <div class="curve-box" style="background-image: url('assets/carasoul/carasoul-2.png')"></div>
-      <div class="curve-box" style="background-image: url('assets/carasoul/carasoul-3.png')"></div>
-      <div class="curve-box" style="background-image: url('assets/carasoul/carasoul-4.png')"></div>
-      <div class="curve-box" style="background-image: url('assets/carasoul/carasoul-5.png')"></div>
-      <div class="curve-box" style="background-image: url('assets/carasoul/carasoul-1.png')"></div>
-    </div>
-  </div>
-</div>
-
-        <!-- <div class="jontrona">
-
-            <div class="carousel" id="carousel">
-                <div class="track" id="track"></div>
+        <div class="curve-section">
+            <div class="boxes-viewport" id="boxes-viewport">
+                <div class="scroll-track" id="track">
+                    <div class="curve-box" style="background-image: url('assets/carasoul/carasoul-1.png')"></div>
+                    <div class="curve-box" style="background-image: url('assets/carasoul/carasoul-2.png')"></div>
+                    <div class="curve-box" style="background-image: url('assets/carasoul/carasoul-3.png')"></div>
+                    <div class="curve-box" style="background-image: url('assets/carasoul/carasoul-4.png')"></div>
+                    <div class="curve-box" style="background-image: url('assets/carasoul/carasoul-5.png')"></div>
+                    <div class="curve-box" style="background-image: url('assets/carasoul/carasoul-1.png')"></div>
+                </div>
             </div>
-
-        </div> -->
-
-        <div class="three-moto">
-            <div>
-                <div>Discover</div>
-            </div>
-            <div>
-
-                <div>Design</div>
-            </div>
-            <div>
-                <div>Build</div>
-            </div>
-
         </div>
 
 
-    </section>
-
-
-
-    <section class="glow">
-
-        
-        <div class="component-wrapper">
-            <div class="glow-spread"></div>
-            <div class="glow-core"></div>
-            
-            <div class="search-pill">
-                <button class="create-btn">
-                    <span>+</span> Create
-                </button>
-                
-                <div class="divider-gg"></div>
-                
-                <input type="text" class="input-field" placeholder="Amazing Email" autocomplete="off">
+        <div class="three-moto" id="motoContainer" aria-label="Discover, Design, Build">
+            <div class="moto-item moto-item--discover">
+                <div class="circle">Discover</div>
             </div>
-        </section>
-  </div>
+            <div class="moto-item moto-item--design">
+                <div class="circle">Design</div>
+            </div>
+            <div class="moto-item moto-item--build">
+                <div class="circle">Build</div>
+            </div>
+        </div>
+
+
+<section class="glow" id="glowSection">
+    <div class="component-wrapper" id="pillWrapper">
+      <div class="glow-spread"></div>
+      <div class="glow-core"></div>
+
+      <div class="search-pill">
+        <button class="create-btn">
+          <span>+</span> Create
+        </button>
+
+        <div class="divider-gg"></div>
+
+        <input type="text" class="input-field" placeholder="Amazing Email" autocomplete="off">
+      </div>
+    </div>
+  </section>
+    </section>
     <section class="testimonial">
 
         <div class="testimonial-container">
@@ -622,7 +682,8 @@
                 <img src="assets/stars.png" class="star-rating " alt="">
                 <h2 class="main-title">
                     Trusted By the <span data-reveal class="serif-italic">World's</span> Fastest<br>
-                    <span data-reveal class="serif-italic">Growing</span> Email Marketing <span data-reveal class="serif-italic">Agency</span>
+                    <span data-reveal class="serif-italic">Growing</span> Email Marketing <span data-reveal
+                        class="serif-italic">Agency</span>
                 </h2>
             </header>
 
@@ -630,9 +691,11 @@
 
                 <article class="testimonial-card">
                     <p class="quote">
-                        Flowium Delivered The Project On Time Thanks To Their Consistent Reception To Needs And Requests
+                        Flowium Delivered The Project On Time Thanks To Their Consistent Reception To Needs And
+                        Requests
                         The Team
-                        Was Attentive To The Client's Requirements And Delivered The Expected Outputs, Which Ensured The
+                        Was Attentive To The Client's Requirements And Delivered The Expected Outputs, Which Ensured
+                        The
                         Project's
                         Success And Satisfactory Results.
                     </p>
@@ -647,9 +710,11 @@
 
                 <article class="testimonial-card">
                     <p class="quote">
-                        Flowium Delivered The Project On Time Thanks To Their Consistent Reception To Needs And Requests
+                        Flowium Delivered The Project On Time Thanks To Their Consistent Reception To Needs And
+                        Requests
                         The Team
-                        Was Attentive To The Client's Requirements And Delivered The Expected Outputs, Which Ensured The
+                        Was Attentive To The Client's Requirements And Delivered The Expected Outputs, Which Ensured
+                        The
                         Project's
                         Success And Satisfactory Results.
                     </p>
@@ -664,9 +729,11 @@
 
                 <article class="testimonial-card">
                     <p class="quote">
-                        Flowium Delivered The Project On Time Thanks To Their Consistent Reception To Needs And Requests
+                        Flowium Delivered The Project On Time Thanks To Their Consistent Reception To Needs And
+                        Requests
                         The Team
-                        Was Attentive To The Client's Requirements And Delivered The Expected Outputs, Which Ensured The
+                        Was Attentive To The Client's Requirements And Delivered The Expected Outputs, Which Ensured
+                        The
                         Project's
                         Success And Satisfactory Results.
                     </p>
@@ -681,9 +748,11 @@
 
                 <article class="testimonial-card">
                     <p class="quote">
-                        Flowium Delivered The Project On Time Thanks To Their Consistent Reception To Needs And Requests
+                        Flowium Delivered The Project On Time Thanks To Their Consistent Reception To Needs And
+                        Requests
                         The Team
-                        Was Attentive To The Client's Requirements And Delivered The Expected Outputs, Which Ensured The
+                        Was Attentive To The Client's Requirements And Delivered The Expected Outputs, Which Ensured
+                        The
                         Project's
                         Success And Satisfactory Results.
                     </p>
@@ -698,9 +767,11 @@
 
                 <article class="testimonial-card">
                     <p class="quote">
-                        Flowium Delivered The Project On Time Thanks To Their Consistent Reception To Needs And Requests
+                        Flowium Delivered The Project On Time Thanks To Their Consistent Reception To Needs And
+                        Requests
                         The Team
-                        Was Attentive To The Client's Requirements And Delivered The Expected Outputs, Which Ensured The
+                        Was Attentive To The Client's Requirements And Delivered The Expected Outputs, Which Ensured
+                        The
                         Project's
                         Success And Satisfactory Results.
                     </p>
@@ -715,9 +786,11 @@
 
                 <article class="testimonial-card">
                     <p class="quote">
-                        Flowium Delivered The Project On Time Thanks To Their Consistent Reception To Needs And Requests
+                        Flowium Delivered The Project On Time Thanks To Their Consistent Reception To Needs And
+                        Requests
                         The Team
-                        Was Attentive To The Client's Requirements And Delivered The Expected Outputs, Which Ensured The
+                        Was Attentive To The Client's Requirements And Delivered The Expected Outputs, Which Ensured
+                        The
                         Project's
                         Success And Satisfactory Results.
                     </p>
@@ -740,7 +813,8 @@
 
 
 
-        <div class="divider"></div>
+        <!-- <div class="divider"></div> -->
+        <div class="comp"></div>
 
 
 
@@ -748,7 +822,8 @@
             <header class="services-header">
                 <h2>
                     We think big. The alternative to the <br>
-                    <span data-reveal class="serif-italic">agency</span> status <span data-reveal class="serif-italic">solutions.</span>
+                    <span data-reveal class="serif-italic">agency</span> status <span data-reveal
+                        class="serif-italic">solutions.</span>
                 </h2>
             </header>
 
@@ -849,60 +924,62 @@
         </div>
     </section>
 
-<section class="pricing">
-  <div id="physics-viewport" aria-hidden="true"></div>
 
-  <div class="pricing-content">
-    <h1>Pricing and Plans <br>Tailord to any Projects</h1>
 
-    <div class="pricing-container">
-      <div class="price-card">
-        <div class="price">$1,800<span data-reveal>/Per Month</span></div>
-        <h2 class="title">Design Only<br>Launch Package</h2>
-        <ul>
-          <li>UX Research</li>
-          <li>High-Fidelity Designs</li>
-          <li>Responsive Design</li>
-          <li>Figma Prototype</li>
-          <li>Design System</li>
-          <li>Developer Handoff</li>
-          <li>Unlimited Revisions</li>
-        </ul>
-        <a href="#" class="btn">Get Started</a>
-      </div>
+    <section class="pricing">
+        <div id="physics-viewport" aria-hidden="true"></div>
 
-      <div class="price-card featured">
-        <div class="price">$1,800<span data-reveal>/Per Month</span></div>
-        <h2 class="title">Design Only<br>Launch Package</h2>
-        <ul>
-          <li>UX Research</li>
-          <li>High-Fidelity Designs</li>
-          <li>Responsive Design</li>
-          <li>Figma Prototype</li>
-          <li>Design System</li>
-          <li>Developer Handoff</li>
-          <li>Unlimited Revisions</li>
-        </ul>
-        <a href="#" class="btn btn-featured">Get Started</a>
-      </div>
+        <div class="pricing-content">
+            <h1>Pricing and Plans <br>Tailord to any Projects</h1>
 
-      <div class="price-card">
-        <div class="price">$1,800<span data-reveal>/Per Month</span></div>
-        <h2 class="title">Design Only<br>Launch Package</h2>
-        <ul>
-          <li>UX Research</li>
-          <li>High-Fidelity Designs</li>
-          <li>Responsive Design</li>
-          <li>Figma Prototype</li>
-          <li>Design System</li>
-          <li>Developer Handoff</li>
-          <li>Unlimited Revisions</li>
-        </ul>
-        <a href="#" class="btn">Get Started</a>
-      </div>
-    </div>
-  </div>
-</section>
+            <div class="pricing-container">
+                <div class="price-card">
+                    <div class="price">$1,800<span data-reveal>/Per Month</span></div>
+                    <h2 class="title">Design Only<br>Launch Package</h2>
+                    <ul>
+                        <li>UX Research</li>
+                        <li>High-Fidelity Designs</li>
+                        <li>Responsive Design</li>
+                        <li>Figma Prototype</li>
+                        <li>Design System</li>
+                        <li>Developer Handoff</li>
+                        <li>Unlimited Revisions</li>
+                    </ul>
+                    <a href="#" class="btn">Get Started</a>
+                </div>
+
+                <div class="price-card featured">
+                    <div class="price">$1,800<span data-reveal>/Per Month</span></div>
+                    <h2 class="title">Design Only<br>Launch Package</h2>
+                    <ul>
+                        <li>UX Research</li>
+                        <li>High-Fidelity Designs</li>
+                        <li>Responsive Design</li>
+                        <li>Figma Prototype</li>
+                        <li>Design System</li>
+                        <li>Developer Handoff</li>
+                        <li>Unlimited Revisions</li>
+                    </ul>
+                    <a href="#" class="btn btn-featured">Get Started</a>
+                </div>
+
+                <div class="price-card">
+                    <div class="price">$1,800<span data-reveal>/Per Month</span></div>
+                    <h2 class="title">Design Only<br>Launch Package</h2>
+                    <ul>
+                        <li>UX Research</li>
+                        <li>High-Fidelity Designs</li>
+                        <li>Responsive Design</li>
+                        <li>Figma Prototype</li>
+                        <li>Design System</li>
+                        <li>Developer Handoff</li>
+                        <li>Unlimited Revisions</li>
+                    </ul>
+                    <a href="#" class="btn">Get Started</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
 
 
@@ -911,9 +988,16 @@
             <div class="footer-inner">
 
                 <div class="footer-top">
+                    <div>
+
                     <h2>Have a Project?</h2>
                     <p>Get a custom Email Template for your project after a call with us. Book your call at <a
                             href="mailto:byteroc@gmail.com">byteroc@gmail.com</a></p>
+                    </div>
+                    <div class="footer-logo">
+                        
+                        <img  src="./assets/main.png" alt="">
+                    </div>
                 </div>
 
                 <div class="footer-bottom">
@@ -941,13 +1025,15 @@
         <div class="thanks"></div>
     </section>
 
-    
-    <script src="js/animations.js" ></script>
+
+    <script src="js/animations.js"></script>
+    <script src="js/hero.js"></script>
     <script src="js/infinite-cards.js"></script>
     <script src="js/theme.js"></script>
     <script src="js/pricing-reveal.js"></script>
     <script src="js/testimonial-pagination.js"></script>
     <script src="js/carousel.js"></script>
+    <script src="js/three-balls.js"></script>
     <script src="js/physics-pills.js"></script>
 </body>
 
