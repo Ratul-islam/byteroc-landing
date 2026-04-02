@@ -1,47 +1,68 @@
 
-const gg = document.getElementById('boxes-viewport');
-const track = document.getElementById('track');
+const wrapper = document.getElementById('carousel-wrapper');
+const trackMasked = document.getElementById('track-masked');
+const trackUnmasked = document.getElementById('track-unmasked');
 
-const originalHTML = track.innerHTML;
-track.innerHTML = originalHTML + originalHTML + originalHTML + originalHTML; 
+const carouselItemsHTML = `
+    <div class="curve-box"><div class="box-inner" style="background-color: #333; background-image: url('assets/carasoul/carasoul-1.png');"loading="lazy" ></div></div>
+    <div class="curve-box"><div class="box-inner" style="background-color: #444; background-image: url('assets/carasoul/carasoul-2.png');"loading="lazy" ></div></div>
+    <div class="curve-box"><div class="box-inner" style="background-color: #555; background-image: url('assets/carasoul/carasoul-3.png');"loading="lazy" ></div></div>
+    <div class="curve-box"><div class="box-inner" style="background-color: #666; background-image: url('assets/carasoul/carasoul-4.png');"loading="lazy" ></div></div>
+    <div class="curve-box"><div class="box-inner" style="background-color: #777; background-image: url('assets/carasoul/carasoul-5.png');"loading="lazy" ></div></div>
+    <div class="curve-box"><div class="box-inner" style="background-color: #888; background-image: url('assets/carasoul/carasoul-1.png');"loading="lazy" ></div></div>
+`;
 
-const allBoxes = Array.from(track.children);
+// Multiply the items to create the infinite loop
+const fullHTML = carouselItemsHTML.repeat(4);
+trackMasked.innerHTML = fullHTML;
+trackUnmasked.innerHTML = fullHTML;
+
+const maskedBoxes = Array.from(trackMasked.children);
+const unmaskedBoxes = Array.from(trackUnmasked.children);
 
 const boxWidth = 250;
 const gap = 30; 
 const itemWidth = boxWidth + gap; 
-const totalWidth = allBoxes.length * itemWidth;
+const totalWidth = maskedBoxes.length * itemWidth;
 const halfTotal = totalWidth / 2;
-
-allBoxes.forEach((box, i) => {
-  box.dataset.basePos = i * itemWidth;
-});
 
 let currentX = 0;
 let targetX = 0;
 let isDragging = false;
+let isHovering = false;
 let lastClientX = 0;
 
+const autoScrollSpeed = -0.8; 
+
 const render = () => {
+  if (!isDragging && !isHovering) {
+    targetX += autoScrollSpeed;
+  }
+
+  // Smoothly lerp towards the targetX
   currentX += (targetX - currentX) * 0.1;
 
-  allBoxes.forEach(box => {
-    const basePos = parseFloat(box.dataset.basePos);
+  for (let i = 0; i < maskedBoxes.length; i++) {
+    const basePos = i * itemWidth;
     const pos = basePos + currentX;
-
     const wrappedPos = ((pos + halfTotal) % totalWidth + totalWidth) % totalWidth - halfTotal;
 
-    box.style.transform = `translate3d(${wrappedPos}px, 0, 0)`;
-  });
+    const transformStr = `translate3d(${wrappedPos.toFixed(2)}px, 0, 0)`;
+    
+    maskedBoxes[i].style.transform = transformStr;
+    unmaskedBoxes[i].style.transform = transformStr;
+  }
 
   requestAnimationFrame(render);
 };
 
 requestAnimationFrame(render);
 
+// --- CONTROLS ---
+
 const handlePointerDown = (clientX) => {
   isDragging = true;
-  gg.classList.add('active');
+  wrapper.classList.add('active');
   lastClientX = clientX;
 };
 
@@ -54,17 +75,31 @@ const handlePointerMove = (clientX) => {
 
 const handlePointerUp = () => {
   isDragging = false;
-  gg.classList.remove('active');
+  wrapper.classList.remove('active');
 };
 
-gg.addEventListener('mousedown', (e) => handlePointerDown(e.pageX));
+// Mouse Events
+wrapper.addEventListener('mousedown', (e) => handlePointerDown(e.pageX));
 window.addEventListener('mousemove', (e) => handlePointerMove(e.pageX));
 window.addEventListener('mouseup', handlePointerUp);
-window.addEventListener('mouseleave', handlePointerUp);
 
-gg.addEventListener('touchstart', (e) => handlePointerDown(e.touches[0].pageX));
+wrapper.addEventListener('mouseenter', () => isHovering = true);
+wrapper.addEventListener('mouseleave', () => {
+  isHovering = false;
+  handlePointerUp(); 
+});
+
+wrapper.addEventListener('touchstart', (e) => {
+  isHovering = true;
+  handlePointerDown(e.touches[0].pageX);
+}, { passive: true });
+
 window.addEventListener('touchmove', (e) => {
   if (isDragging) e.preventDefault();
   handlePointerMove(e.touches[0].pageX);
 }, { passive: false });
-window.addEventListener('touchend', handlePointerUp);
+
+window.addEventListener('touchend', () => {
+  isHovering = false;
+  handlePointerUp();
+});

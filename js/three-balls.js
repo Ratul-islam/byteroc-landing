@@ -1,28 +1,46 @@
 
-    (() => {
-      const container = document.getElementById("motoContainer");
+    document.addEventListener("DOMContentLoaded", () => {
+      const container = document.querySelector(".three-ball");
+
       if (!container) return;
 
-      const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-      if (reduced) return;
+      const circles = container.querySelectorAll(".moto-circle");
 
-      const io = new IntersectionObserver(([entry], observer) => {
-        if (!entry.isIntersecting) return;
+      if (circles.length < 3) return;
 
-        container.classList.add("is-revealed");
+      const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      if (prefersReducedMotion) {
+        return;
+      }
 
-        setTimeout(() => {
-          container.classList.add("is-active");
-        }, 150);
+      const observerOptions = {
+        rootMargin: "0px 0px -20% 0px",
 
-        observer.unobserve(entry.target);
-        observer.disconnect();
-      }, {
-        threshold: 0.5
-      });
+        threshold: 0.2
+      };
 
+      const io = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry) => {
+          // Ignore if not intersecting
+          if (!entry.isIntersecting) return;
+
+          // 4. Clean class application using our reliable querySelectorAll array
+          circles[0].classList.add("first-class");
+          circles[1].classList.add("second-class");
+          circles[2].classList.add("last-class");
+
+          setTimeout(() => {
+            container.classList.add("is-active");
+          }, 150);
+
+          // 5. Cleanup: Stop observing immediately to save browser memory
+          observer.disconnect();
+        });
+      }, observerOptions);
+
+      // Start observing
       io.observe(container);
-    })();
+    });
 
     (() => {
       const section = document.getElementById("statsSection");
@@ -126,3 +144,69 @@
         observer.observe(section);
       }
     });
+
+const comps = document.querySelectorAll('.comp');
+
+comps.forEach((comp) => {
+  const style = window.getComputedStyle(comp);
+  
+  if (!style.backgroundImage || style.backgroundImage === 'none') return;
+  
+  const bgImgUrl = style.backgroundImage.split(',')[0].slice(4, -1).replace(/["']/g, "");
+
+  const img = new Image();
+  img.src = bgImgUrl;
+
+  let imageRenderedWidth = 0;
+  let testX = 0;
+  let copiesNeeded = 2;
+  const speed = 1.5; 
+  const gapAdjustment = -420;
+
+  img.onload = () => {
+    const aspectRatio = img.naturalWidth / img.naturalHeight;
+
+    const calculateWidth = () => {
+      const currentHeight = comp.clientHeight;
+      
+      imageRenderedWidth = (currentHeight * aspectRatio) + gapAdjustment;
+      
+      if (imageRenderedWidth <= 0) return; 
+      
+      copiesNeeded = Math.ceil(window.innerWidth / imageRenderedWidth) + 1;
+      
+      const bgImages = [];
+      const bgSizes = [];
+      for (let i = 0; i < copiesNeeded; i++) {
+        bgImages.push(`url('${bgImgUrl}')`);
+        bgSizes.push('auto 100%');
+      }
+      
+      comp.style.backgroundImage = bgImages.join(', ');
+      comp.style.backgroundRepeat = 'no-repeat';
+      comp.style.backgroundSize = bgSizes.join(', ');
+    };
+
+    calculateWidth();
+    
+    window.addEventListener('resize', calculateWidth);
+
+    const animate = () => {
+      testX -= speed;
+
+      if (testX <= -imageRenderedWidth) {
+        testX += imageRenderedWidth; 
+      }
+
+      const positions = [];
+      for (let i = 0; i < copiesNeeded; i++) {
+        positions.push(`${testX + (i * imageRenderedWidth)}px center`);
+      }
+      comp.style.backgroundPosition = positions.join(', ');
+
+      requestAnimationFrame(animate);
+    };
+
+    requestAnimationFrame(animate);
+  };
+});

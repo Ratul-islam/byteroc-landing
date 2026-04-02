@@ -5,86 +5,93 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ByteRoc — Creative Breakthroughs into Impact Mines</title>
+
+<script src="https://cdn.jsdelivr.net/npm/locomotive-scroll/bundled/locomotive-scroll.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"></script>
+
+
     <meta name="description" content="Responsive landing page inspired by the provided ByteRoc design." />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@400;500;600;700&display=swap"
         rel="stylesheet" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"></script>
+
+        
     <link rel="stylesheet" href="css/fonts.css" />
     <link rel="stylesheet" href="css/animations.css" />
     <link rel="stylesheet" href="css/main.css" />
 </head>
 
-<body>
-    
 
+
+
+
+
+
+
+
+<body>
 
     <section id="hero">
-        <img class="main-logo" data-animate src="./assets/main.png" />
+        <img class="main-logo" data-animate src="./assets/main.png" loading="lazy" alt="byteroc"/>
         <div class="hero-headings">
             <h2>Turning <span data-reveal>Creative</span></h2>
             <h2>Breakthroughs into</h2>
             <div class="hero-last-line">
                 <h2><span data-reveal>Impact</span> Mines</h2>
                 <div class="icon-row">
-                    <div><img src="./assets/hero/figma.png" alt="figma icon"></div>
-                    <div><img src="./assets/hero/monkey.png" alt="monkey icon"></div>
-                    <div><img src="./assets/hero/klaviyo.png" alt="klaviyo icon"></div>
+                    <div><img src="./assets/hero/figma.png" alt="figma icon" loading="lazy" ></div>
+                    <div><img src="./assets/hero/monkey.png" alt="monkey icon" loading="lazy" ></div>
+                    <div><img src="./assets/hero/klaviyo.png" alt="klaviyo icon" loading="lazy" ></div>
                 </div>
             </div>
         </div>
 
         <div class="samples-section">
             <div>
-                <img src="./assets/hero/hero1.webp" alt="sample 1" 
-                     data-category="E-Commerce Redesign"
-                     data-title="Nike Global App"
-                     data-stack1="./assets/hero/imageset/first-1.webp" data-stack2="./assets/hero/imageset/first-4.webp" 
-                     data-stack3="./assets/hero/imageset/first-3.webp" data-stack4="./assets/hero/imageset/first-2.webp">
-            </div>
-            
-            <div>
-                <img src="./assets/hero/hero2.webp" alt="sample 2" 
-                     data-category="Web3 Marketplace"
-                     data-title="Pallet Ross"
-                     data-stack1="./assets/hero/imageset/sec-1.webp" data-stack2="./assets/hero/imageset/sec-2.webp" 
-                     data-stack3="./assets/hero/imageset/sec-3.webp" data-stack4="./assets/hero/imageset/sec-4.webp">
+                <img src="./assets/hero/hero1.webp" alt="sample 1" data-category="E-Commerce Redesign"
+                    data-title="Nike Global App" data-stack1="./assets/hero/imageset/first-1.webp"
+                    data-stack2="./assets/hero/imageset/first-4.webp" data-stack3="./assets/hero/imageset/first-3.webp"
+                    data-stack4="./assets/hero/imageset/first-2.webp" loading="lazy" >
             </div>
 
             <div>
-                <img src="./assets/hero/hero3.webp" alt="sample 3" 
-                     data-category="Fintech Platform"
-                     data-title="Project Alpha"
-                     data-stack1="./assets/hero/imageset/four-1.webp" data-stack2="./assets/hero/imageset/four-2.webp" 
-                     data-stack3="./assets/hero/imageset/four-3.webp" data-stack4="./assets/hero/imageset/four-4.webp">
+                <img src="./assets/hero/hero2.webp" alt="sample 2" data-category="Web3 Marketplace"
+                    data-title="Pallet Ross" data-stack1="./assets/hero/imageset/sec-1.webp"
+                    data-stack2="./assets/hero/imageset/sec-2.webp" data-stack3="./assets/hero/imageset/sec-3.webp"
+                    data-stack4="./assets/hero/imageset/sec-4.webp" loading="lazy" >
+            </div>
+
+            <div>
+                <img src="./assets/hero/hero3.webp" alt="sample 3" data-category="Fintech Platform"
+                    data-title="Project Alpha" data-stack1="./assets/hero/imageset/four-1.webp"
+                    data-stack2="./assets/hero/imageset/four-2.webp" data-stack3="./assets/hero/imageset/four-3.webp"
+                    data-stack4="./assets/hero/imageset/four-4.webp" loading="lazy" >
             </div>
             <div>
-                <img src="./assets/hero/hero4.webp" alt="sample 4" 
-                     data-category="Brand Identity"
-                     data-title="Project Beta"
-                     data-stack1="./assets/hero/imageset/third-1.webp" data-stack2="./assets/hero/imageset/third-2.webp" 
-                     data-stack3="./assets/hero/imageset/third-3.webp" data-stack4="./assets/hero/imageset/third-4.webp">
+                <img src="./assets/hero/hero4.webp" alt="sample 4" data-category="Brand Identity"
+                    data-title="Project Beta" data-stack1="./assets/hero/imageset/third-1.webp"
+                    data-stack2="./assets/hero/imageset/third-2.webp" data-stack3="./assets/hero/imageset/third-3.webp"
+                    data-stack4="./assets/hero/imageset/third-4.webp" loading="lazy" >
             </div>
             <div>
-                <img src="./assets/hero/hero5.webp" alt="sample 5" 
-                     data-category="SaaS Dashboard"
-                     data-title="Project Gamma"
-                     data-stack1="./assets/hero/imageset/fif-1.webp" data-stack2="./assets/hero/imageset/fif-2.webp" 
-                     data-stack3="./assets/hero/imageset/fif-3.webp" data-stack4="./assets/hero/imageset/fif-4.webp">
+                <img src="./assets/hero/hero5.webp" alt="sample 5" data-category="SaaS Dashboard"
+                    data-title="Project Gamma" data-stack1="./assets/hero/imageset/fif-1.webp"
+                    data-stack2="./assets/hero/imageset/fif-2.webp" data-stack3="./assets/hero/imageset/fif-3.webp"
+                    data-stack4="./assets/hero/imageset/fif-4.webp" loading="lazy" >
             </div>
         </div>
     </section>
 
     <div id="project-modal" class="project-modal">
         <div class="modal-overlay" onclick="closeModal()"></div>
-        
+
         <div class="modal-content-wrapper">
             <div class="modal-top-bar">
                 <button class="btn-close-text" onclick="closeModal()">Close</button>
             </div>
-            
+
             <div class="modal-text-content">
                 <p id="modal-category" class="category-tag">Category</p>
                 <h2 id="modal-title">Project Title</h2>
@@ -98,11 +105,11 @@
         </div>
 
         <div class="modal-stack" id="modal-stack">
-            <img src="" id="modal-stack-1" class="modal-card modal-s1" alt="">
-            <img src="" id="modal-stack-2" class="modal-card modal-s2" alt="">
-            <img src="" id="modal-stack-3" class="modal-card modal-s3" alt="">
-            <img src="" id="modal-stack-4" class="modal-card modal-s4" alt="">
-            <img src="" id="modal-center-image" class="modal-main" alt="Clicked Artwork">
+            <img src="" id="modal-stack-1" class="modal-card modal-s1"loading="lazy"  alt="">
+            <img src="" id="modal-stack-2" class="modal-card modal-s2"loading="lazy"  alt="">
+            <img src="" id="modal-stack-3" class="modal-card modal-s3"loading="lazy"  alt="">
+            <img src="" id="modal-stack-4" class="modal-card modal-s4"loading="lazy"  alt="">
+            <img src="" id="modal-center-image" class="modal-main" loading="lazy"  alt="Clicked Artwork">
         </div>
     </div>
 
@@ -187,10 +194,11 @@
 
 
 
-    <section class="scrolling-section">
-        <div class="scrolling-track">
 
-            <!-- <div class="card card-img tilt-1"></div> -->
+
+    <section class="scrolling-section">
+        <div class="scrolling-track" id="scrolling-track">
+
 
             <div class="card card-dark tilt-2">
                 <div class="badge-green">FREE Email Marketing Audit</div>
@@ -210,13 +218,12 @@
             <div class="card card-team tilt-5">
                 <p>The Byteroc team is a experience group of marketing professionals united by one goal</p>
                 <div class="avatars">
-                    <img src="assets/what-2.png" alt="Team member" class="avatar" style="z-index: 3;">
-                    <img src="assets/what-3.png" alt="Team member" class="avatar" style="z-index: 2;">
+                    <img src="assets/what-2.png" alt="" class="avatar"loading="lazy"  style="z-index: 3;">
+                    <img src="assets/what-3.png" alt="" class="avatar"loading="lazy"  style="z-index: 2;">
                     <div class="avatar-btn">+</div>
                 </div>
             </div>
 
-            <!-- <div class="card card-img tilt-1"></div> -->
 
             <div class="card card-dark tilt-2">
                 <div class="badge-green">FREE Email Marketing Audit</div>
@@ -236,14 +243,17 @@
             <div class="card card-team tilt-5">
                 <p>The Byteroc team is a experience group of marketing professionals united by one goal</p>
                 <div class="avatars">
-                    <img src="assets/what-2.png" alt="Team member" class="avatar" style="z-index: 3;">
-                    <img src="assets/what-3.png" alt="Team member" class="avatar" style="z-index: 2;">
+                    <img src="assets/what-2.png" alt="" loading="lazy" class="avatar" style="z-index: 3;">
+                    <img src="assets/what-3.png" alt="" loading="lazy" class="avatar" style="z-index: 2;">
                     <div class="avatar-btn">+</div>
                 </div>
             </div>
 
         </div>
     </section>
+
+
+
 
     <section class="process">
         <h1>
@@ -433,7 +443,7 @@
             <div class="middle">
                 <div>
                     <div>
-                        <img src="/assets/main.png" alt="ByteRoc logo">
+                        <img src="/assets/main.png"loading="lazy"  alt="ByteRoc logo">
                     </div>
                 </div>
                 <div class="vine">
@@ -632,54 +642,54 @@
         </div>
 
         <div class="curve-section">
-            <div class="boxes-viewport" id="boxes-viewport">
-                <div class="scroll-track" id="track">
-                    <div class="curve-box" style="background-image: url('assets/carasoul/carasoul-1.png')"></div>
-                    <div class="curve-box" style="background-image: url('assets/carasoul/carasoul-2.png')"></div>
-                    <div class="curve-box" style="background-image: url('assets/carasoul/carasoul-3.png')"></div>
-                    <div class="curve-box" style="background-image: url('assets/carasoul/carasoul-4.png')"></div>
-                    <div class="curve-box" style="background-image: url('assets/carasoul/carasoul-5.png')"></div>
-                    <div class="curve-box" style="background-image: url('assets/carasoul/carasoul-1.png')"></div>
+            <div class="carousel-wrapper" id="carousel-wrapper">
+
+                <div class="boxes-viewport masked-layer">
+                    <div class="scroll-track" id="track-masked"></div>
+                </div>
+
+                <div class="boxes-viewport unmasked-layer">
+                    <div class="scroll-track" id="track-unmasked"></div>
+                </div>
+
+            </div>
+        </div>
+
+
+  <div class="three-ball">
+
+    <div class="moto-container">
+      <div class="moto-circle first">Discover</div>
+      <div class="moto-circle second">Design</div>
+      <div class="moto-circle third">Build</div>
+    </div>
+  </div>
+        <section class="glow" id="glowSection">
+            <div class="component-wrapper" id="pillWrapper">
+                <div class="glow-spread"></div>
+                <div class="glow-core"></div>
+
+                <div class="search-pill">
+                    <button class="create-btn">
+                        <span>+</span> Create
+                    </button>
+
+                    <div class="divider-gg"></div>
+
+                    <input type="text" class="input-field" placeholder="Amazing Email" autocomplete="off">
                 </div>
             </div>
-        </div>
-
-
-        <div class="three-moto" id="motoContainer" aria-label="Discover, Design, Build">
-            <div class="moto-item moto-item--discover">
-                <div class="circle">Discover</div>
-            </div>
-            <div class="moto-item moto-item--design">
-                <div class="circle">Design</div>
-            </div>
-            <div class="moto-item moto-item--build">
-                <div class="circle">Build</div>
-            </div>
-        </div>
-
-
-<section class="glow" id="glowSection">
-    <div class="component-wrapper" id="pillWrapper">
-      <div class="glow-spread"></div>
-      <div class="glow-core"></div>
-
-      <div class="search-pill">
-        <button class="create-btn">
-          <span>+</span> Create
-        </button>
-
-        <div class="divider-gg"></div>
-
-        <input type="text" class="input-field" placeholder="Amazing Email" autocomplete="off">
-      </div>
-    </div>
-  </section>
+        </section>
     </section>
+
+
+
+
     <section class="testimonial">
 
         <div class="testimonial-container">
             <header class="testimonial-header">
-                <img src="assets/stars.png" class="star-rating " alt="">
+                <img src="assets/stars.png" class="star-rating "loading="lazy"  alt="">
                 <h2 class="main-title">
                     Trusted By the <span data-reveal class="serif-italic">World's</span> Fastest<br>
                     <span data-reveal class="serif-italic">Growing</span> Email Marketing <span data-reveal
@@ -700,7 +710,7 @@
                         Success And Satisfactory Results.
                     </p>
                     <footer class="author-info">
-                        <img src="https://i.pravatar.cc/100?u=1" alt="Portrait" class="author-img">
+                        <img src="https://i.pravatar.cc/100?u=1" alt="Portrait" class="author-img" loading="lazy" >
                         <div class="author-meta">
                             <strong class="author-name">Founder, Violet</strong>
                             <span data-reveal class="author-brand">Botanical Skincare</span>
@@ -719,7 +729,7 @@
                         Success And Satisfactory Results.
                     </p>
                     <footer class="author-info">
-                        <img src="https://i.pravatar.cc/100?u=2" alt="Portrait" class="author-img">
+                        <img src="https://i.pravatar.cc/100?u=2" alt="Portrait" loading="lazy" class="author-img">
                         <div class="author-meta">
                             <strong class="author-name">Founder, Violet</strong>
                             <span data-reveal class="author-brand">Botanical Skincare</span>
@@ -738,7 +748,7 @@
                         Success And Satisfactory Results.
                     </p>
                     <footer class="author-info">
-                        <img src="https://i.pravatar.cc/100?u=3" alt="Portrait" class="author-img">
+                        <img src="https://i.pravatar.cc/100?u=3" alt="Portrait" class="author-img"loading="lazy" >
                         <div class="author-meta">
                             <strong class="author-name">Founder, Violet</strong>
                             <span data-reveal class="author-brand">Botanical Skincare</span>
@@ -757,7 +767,7 @@
                         Success And Satisfactory Results.
                     </p>
                     <footer class="author-info">
-                        <img src="https://i.pravatar.cc/100?u=4" alt="Portrait" class="author-img">
+                        <img src="https://i.pravatar.cc/100?u=4" alt="Portrait" class="author-img"loading="lazy" >
                         <div class="author-meta">
                             <strong class="author-name">Founder, Violet</strong>
                             <span data-reveal class="author-brand">Botanical Skincare</span>
@@ -776,7 +786,7 @@
                         Success And Satisfactory Results.
                     </p>
                     <footer class="author-info">
-                        <img src="https://i.pravatar.cc/100?u=5" alt="Portrait" class="author-img">
+                        <img src="https://i.pravatar.cc/100?u=5" alt="Portrait" class="author-img"loading="lazy" >
                         <div class="author-meta">
                             <strong class="author-name">Founder, Violet</strong>
                             <span data-reveal class="author-brand">Botanical Skincare</span>
@@ -795,7 +805,7 @@
                         Success And Satisfactory Results.
                     </p>
                     <footer class="author-info">
-                        <img src="https://i.pravatar.cc/100?u=6" alt="Portrait" class="author-img">
+                        <img src="https://i.pravatar.cc/100?u=6" alt="Portrait" class="author-img"loading="lazy" >
                         <div class="author-meta">
                             <strong class="author-name">Founder, Violet</strong>
                             <span data-reveal class="author-brand">Botanical Skincare</span>
@@ -837,7 +847,7 @@
                         </div>
                     </div>
                     <div class="col-img">
-                        <img src="assets/plan1.png" alt="Data">
+                        <img src="assets/plan1.png" alt="Data"loading="lazy" >
                     </div>
                     <div class="col-list">
                         <ul>
@@ -860,7 +870,7 @@
                         </div>
                     </div>
                     <div class="col-img">
-                        <img src="assets/plan2.png" alt="Media">
+                        <img src="assets/plan2.png" alt="Media"loading="lazy" >
                     </div>
                     <div class="col-list">
                         <ul>
@@ -883,7 +893,7 @@
                         </div>
                     </div>
                     <div class="col-img">
-                        <img src="assets/plan3.png" alt="Paid">
+                        <img src="assets/plan3.png" alt="Paid"loading="lazy" >
                     </div>
                     <div class="col-list">
                         <ul>
@@ -906,7 +916,7 @@
                         </div>
                     </div>
                     <div class="col-img">
-                        <img src="assets/plan2.png" alt="Email">
+                        <img src="assets/plan2.png" alt="Email"loading="lazy" >
                     </div>
                     <div class="col-list">
                         <ul>
@@ -990,13 +1000,13 @@
                 <div class="footer-top">
                     <div>
 
-                    <h2>Have a Project?</h2>
-                    <p>Get a custom Email Template for your project after a call with us. Book your call at <a
-                            href="mailto:byteroc@gmail.com">byteroc@gmail.com</a></p>
+                        <h2>Have a Project?</h2>
+                        <p>Get a custom Email Template for your project after a call with us. Book your call at <a
+                                href="mailto:byteroc@gmail.com">byteroc@gmail.com</a></p>
                     </div>
                     <div class="footer-logo">
-                        
-                        <img  src="./assets/main.png" alt="">
+
+                        <img src="./assets/main.png" alt="">
                     </div>
                 </div>
 
@@ -1025,6 +1035,17 @@
         <div class="thanks"></div>
     </section>
 
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+            const scrollContainer = document.querySelector('[data-scroll-container]');
+            if (typeof LocomotiveScroll !== 'undefined' && scrollContainer) {
+                const scroll = new LocomotiveScroll({
+                    el: scrollContainer,
+                    smooth: true
+                });
+            }
+        });
+</script>
 
     <script src="js/animations.js"></script>
     <script src="js/hero.js"></script>

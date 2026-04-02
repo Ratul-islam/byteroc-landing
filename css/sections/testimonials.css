@@ -1,4 +1,4 @@
-.-section {
+.section {
   padding: 100px 0;
   width: 100vw;
   overflow: hidden;
@@ -8,41 +8,6 @@
   background-color: var(--color-text);
 }
 
-.scrolling-track {
-  display: flex;
-  gap: 20px;
-  width: max-content;
-  animation: scrollInfinite 30s linear infinite;
-  padding: 40px 20px;
-}
-
-.scrolling-track:hover {
-  animation-play-state: paused;
-}
-
-@keyframes scrollInfinite {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-
-
-.scrolling-section {
-  padding: 100px 0;
-  width: 100%;
-  overflow: hidden;
-  position: relative;
-  display: flex;
-  align-items: center;
-  background-color: var(--color-text);
-}
-
-.scrolling-track {
-  display: flex;
-  gap: 20px;
-  width: max-content;
-  padding: 40px 20px;
-  will-change: transform;
-}
 .testimonial {
   background-image: url("../../assets/strip-bg.webp");
   background-size: cover;
@@ -157,3 +122,39 @@
   .testimonial-card { padding: 2rem; }
   .card-grid { grid-template-columns: 1fr; }
 }
+
+
+  .scrolling-section {
+      padding: 100px 0;
+      width: 100vw;
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      align-items: center;
+      background-color: var(--color-text);
+      touch-action: none; /* Prevents whole page from scrolling when dragging on mobile */
+    }
+
+    .scrolling-track {
+      display: flex;
+      gap: 20px;
+      width: max-content;
+      cursor: grab;
+      will-change: transform;
+    }
+
+    .scrolling-track:active {
+      cursor: grabbing;
+    }
+
+    /* We wrap the cards in JS, this styles the wrapper */
+    .track-set {
+      display: flex;
+      gap: 20px;
+      flex-shrink: 0;
+    }
+
+    /* Stop hover effects while actively dragging so cards don't pop up randomly */
+    .scrolling-track.is-dragging .card {
+      pointer-events: none;
+    }

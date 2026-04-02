@@ -18,6 +18,10 @@
   --shadow-soft: 0 20px 60px rgba(66, 110, 13, 0.12);
   --shadow-card: 0 14px 34px rgba(58, 94, 14, 0.12);
   --shadow-glow: 0 0 80px rgba(188, 255, 77, 0.35);
+
+      --ease-smooth: cubic-bezier(0.22, 1, 0.36, 1);
+      --ease-slow: cubic-bezier(0.16, 1, 0.3, 1); 
+  
 }
 
 :root,

@@ -9,7 +9,6 @@
         const modalStack3 = document.getElementById('modal-stack-3');
         const modalStack4 = document.getElementById('modal-stack-4');
 
-        // Text Elements
         const uiCategory = document.getElementById('modal-category');
         const uiTitle = document.getElementById('modal-title');
 
@@ -122,3 +121,12 @@
                 openModal(img);
             });
         });
+
+
+
+
+        window.addEventListener('load', () => {
+  requestAnimationFrame(() => {
+    document.body.classList.add('page-loaded');
+  });
+});
