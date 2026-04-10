@@ -5,6 +5,8 @@
 }
 
 html {
+  width: 100vw;
+  overflow-x: hidden;
   scroll-behavior: smooth;
   font-family: var(--font-goga);
 }

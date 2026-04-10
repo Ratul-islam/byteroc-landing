@@ -1,9 +1,44 @@
 
+        // --- TEXT SPLITTING LOGIC ---
+        const splitElements = document.querySelectorAll('.split-text');
+        let globalCharIndex = 0;
+        const baseDelay = 0.2; // Start delay for the first letter
+        const delayIncrement = 0.03; // Time gap between each letter zipping in
+
+        function getSplitHTML(node) {
+            let resultHTML = '';
+            const childNodes = Array.from(node.childNodes);
+
+            childNodes.forEach(child => {
+                if (child.nodeType === Node.TEXT_NODE) {
+                    const chars = child.textContent.split('');
+                    chars.forEach(char => {
+                        if (char.trim() === '') {
+                            resultHTML += char; 
+                        } else {
+                            const delay = (baseDelay + (globalCharIndex * delayIncrement)).toFixed(3);
+                            resultHTML += `<span class="char" style="animation-delay: ${delay}s">${char}</span>`;
+                            globalCharIndex++;
+                        }
+                    });
+                } else if (child.nodeType === Node.ELEMENT_NODE) {
+                    const clone = child.cloneNode(false); 
+                    clone.innerHTML = getSplitHTML(child); 
+                    resultHTML += clone.outerHTML;
+                }
+            });
+            return resultHTML;
+        }
+
+        splitElements.forEach(el => {
+            el.innerHTML = getSplitHTML(el);
+        });
+
+        // --- MODAL LOGIC ---
         const modal = document.getElementById('project-modal');
         const modalStack = document.getElementById('modal-stack');
         const modalCenterImage = document.getElementById('modal-center-image');
         
-        // Stack Elements
         const modalStack1 = document.getElementById('modal-stack-1');
         const modalStack2 = document.getElementById('modal-stack-2');
         const modalStack3 = document.getElementById('modal-stack-3');
@@ -38,7 +73,6 @@
             modalStack3.src = imgElement.getAttribute('data-stack3') || '';
             modalStack4.src = imgElement.getAttribute('data-stack4') || '';
             
-            // Inject minimalist text data
             uiCategory.textContent = imgElement.getAttribute('data-category') || 'Selected Work';
             uiTitle.textContent = imgElement.getAttribute('data-title') || 'Case Study';
 
@@ -122,11 +156,9 @@
             });
         });
 
-
-
-
+        // --- TRIGGER ANIMATIONS ---
         window.addEventListener('load', () => {
-  requestAnimationFrame(() => {
-    document.body.classList.add('page-loaded');
-  });
-});
+          requestAnimationFrame(() => {
+            document.body.classList.add('page-loaded');
+          });
+        });

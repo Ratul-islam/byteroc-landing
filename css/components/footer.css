@@ -6,12 +6,66 @@
   font-family: var(--font-goga);
 }
 
-.thanks {
-  width: 100vw;
-  aspect-ratio: 1/0.3;
-  background: url("../../assets/thanks.png") center/cover no-repeat;
-}
+    .thanks {
+      width: 100vw;
+      overflow-x: hidden;
+      padding: 50px 0;
+    }
 
+    .thanks svg path {
+      fill-opacity: 0;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .thanks.animate svg path {
+      animation: 
+        draw-outline 2.5s cubic-bezier(0.25, 1, 0.5, 1) forwards,
+        fill-shape 1s ease-in-out 1.5s forwards;
+    }
+
+    @keyframes draw-outline {
+      to {
+        stroke-dashoffset: 0;
+      }
+    }
+
+    @keyframes fill-shape {
+      to {
+        fill-opacity: 1;
+        stroke-opacity: 0;
+      }
+    }
+
+
+    .start {
+      animation: star-animation 5s infinite;
+    }
+    .diamond {
+      animation: diamond-animation 5s infinite;
+    }
+
+
+    @keyframes star-animation {
+      0% {
+        rotate: -5deg;
+      }50%{
+        rotate:2deg;
+      }100%{
+        rotate:-5deg;
+      }
+    }
+    @keyframes diamond-animation {
+      0% {
+        transform: translateX(0) translateY(0px);
+      }50%{
+        transform: translateX(60px) translateY(20px);
+
+      }100%{
+        transform: translateX(0px)translateY(0px);
+
+      }
+    }
 .site-footer {
   color: white;
   padding: 80px 0 40px 0;

@@ -15,13 +15,24 @@
   --ease-smooth: cubic-bezier(0.22, 1, 0.36, 1);
   --ease-snappy: cubic-bezier(0.16, 1, 0.3, 1);
 
+  --ease-spring: cubic-bezier(0.175, 0.885, 0.32, 1.1);
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+
+  --pill-bg: linear-gradient(
+    90deg,
+    rgba(22, 22, 22, 0.95) 0%,
+    rgba(10, 10, 10, 0.85) 100%
+  );
+  --neon-color: #8ef533;
+  --vibrant-overlay: #63a112;
+
   --shadow-soft: 0 20px 60px rgba(66, 110, 13, 0.12);
   --shadow-card: 0 14px 34px rgba(58, 94, 14, 0.12);
   --shadow-glow: 0 0 80px rgba(188, 255, 77, 0.35);
 
-      --ease-smooth: cubic-bezier(0.22, 1, 0.36, 1);
-      --ease-slow: cubic-bezier(0.16, 1, 0.3, 1); 
-  
+  --ease-smooth: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-slow: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 :root,

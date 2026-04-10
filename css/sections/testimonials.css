@@ -1,128 +1,122 @@
-.section {
-  padding: 100px 0;
-  width: 100vw;
-  overflow: hidden;
-  position: relative;
-  display: flex;
-  align-items: center;
-  background-color: var(--color-text);
-}
 
-.testimonial {
-  background-image: url("../../assets/strip-bg.webp");
-  background-size: cover;
-  background-position: center;
-}
+    .testimonial {
+      background-image: url("../../assets/strip-bg.webp");
+      background-size: cover;
+      background-position: center;
+      background-color: #f9f9f9; 
+    }
 
-.testimonial-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 80px 20px;
-  text-align: center;
-}
+    .testimonial-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 80px 20px;
+      text-align: center;
+    }
 
-.star-rating {
-  margin: auto;
-  margin-bottom: 1rem;
-}
+    .star-rating {
+      margin: auto;
+      margin-bottom: 1rem;
+    }
 
-.main-title {
-  font-family: var(--font-goga);
-  font-weight: 800;
-  font-size: clamp(2rem, 5vw, 3.5rem);
-  line-height: 1.2;
-  color: var(--color-text-soft);
-  margin-bottom: 4rem;
-}
+    .main-title {
+      font-family: var(--font-goga);
+      font-weight: 800;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      line-height: 1.2;
+      color: var(--color-text-soft);
+      margin: auto;
+      margin-bottom: 4rem;
+      
+    }
 
-.card-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-  gap: 24px;
-}
+    /* --- MARQUEE STYLES START --- */
+    .marquee-container {
+      width: 100vw;
+      position: relative;
+      left: 50%;
+      right: 50%;
+      margin-left: -50vw;
+      margin-right: -50vw;
+      overflow: hidden;
+      margin-bottom: 24px;
+      display: flex;
+      
+      /* The Vanishing Point Effect */
+      -webkit-mask-image: linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%);
+      mask-image: linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%);
+    }
 
-.testimonial-card {
-  background: #f4fce852;
-  backdrop-filter: blur(10px);
-  border-radius: 28px;
-  padding: 2.8rem;
-  text-align: left;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-}
+    .marquee-track {
+      display: flex;
+      width: max-content;
+      will-change: transform; 
+    }
 
-.quote {
-  font-family: var(--font-goga);
-  font-size: 0.92rem;
-  line-height: 1.6;
-  color: var(--text-primary);
-  margin-bottom: 2.5rem;
-  text-align: left;
-}
+    .track-content {
+      display: flex;
+      gap: 24px;
+      padding-right: 24px;
+    }
 
-.author-info {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-}
+    .testimonial-card {
+      background: #f4fce8f5;
+      backdrop-filter: blur(10px);
+      border-radius: 28px;
+      padding: 2.8rem;
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      
+      width: 350px; 
+      flex-shrink: 0;
+      cursor: pointer;
+    }
 
-.author-img {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  object-fit: cover;
-}
+    .quote {
+      font-family: var(--font-goga);
+      font-size: 0.92rem;
+      line-height: 1.6;
+      color: var(--text-primary);
+      margin-bottom: 2.5rem;
+      text-align: left;
+    }
 
-.author-meta {
-  display: flex;
-  flex-direction: column;
-  font-size: 1rem;
-  line-height: 1.2;
-}
+    .author-info {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
 
-.author-name,
-.author-brand {
-  font-family: var(--font-goga);
-  color: var(--color-text-soft);
-  font-weight: 700;
-  font-size: clamp(20px, 5vw, 25px);
-}
+    .author-img {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
 
-.pagination-nav {
-  margin-top: 60px;
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-}
+    .author-meta {
+      display: flex;
+      flex-direction: column;
+      font-size: 1rem;
+      line-height: 1.2;
+    }
 
-.pagination-nav .dot {
-  width: 10px;
-  height: 10px;
-  background: rgba(45, 74, 34, 0.2);
-  border-radius: 50%;
-  cursor: pointer;
-}
+    .author-name,
+    .author-brand {
+      font-family: var(--font-goga);
+      color: var(--color-text-soft);
+      font-weight: 700;
+      font-size: clamp(20px, 5vw, 25px);
+    }
 
-.pagination-nav .dot.active {
-  background: var(--text-primary);
-}
-
-.divider {
-  background-image: url("../../assets/verse.webp");
-  height: 126px;
-  width: 100vw;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-@media (max-width: 480px) {
-  .testimonial-card { padding: 2rem; }
-  .card-grid { grid-template-columns: 1fr; }
-}
-
+    @media (max-width: 480px) {
+      .testimonial-card { 
+        padding: 2rem; 
+        width: 280px; 
+      }
+    }
 
   .scrolling-section {
       padding: 100px 0;
