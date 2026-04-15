@@ -4,12 +4,12 @@ const trackMasked = document.getElementById('track-masked');
 const trackUnmasked = document.getElementById('track-unmasked');
 
 const carouselItemsHTML = `
-    <div class="curve-box"><div class="box-inner" style="background-color: #333; background-image: url('assets/carasoul/carasoul-1.png');"loading="lazy" ></div></div>
-    <div class="curve-box"><div class="box-inner" style="background-color: #444; background-image: url('assets/carasoul/carasoul-2.png');"loading="lazy" ></div></div>
-    <div class="curve-box"><div class="box-inner" style="background-color: #555; background-image: url('assets/carasoul/carasoul-3.png');"loading="lazy" ></div></div>
-    <div class="curve-box"><div class="box-inner" style="background-color: #666; background-image: url('assets/carasoul/carasoul-4.png');"loading="lazy" ></div></div>
-    <div class="curve-box"><div class="box-inner" style="background-color: #777; background-image: url('assets/carasoul/carasoul-5.png');"loading="lazy" ></div></div>
-    <div class="curve-box"><div class="box-inner" style="background-color: #888; background-image: url('assets/carasoul/carasoul-1.png');"loading="lazy" ></div></div>
+    <div class="curve-box"><div class="box-inner" style="background-color: #333; background-image: url('assets/carasoul/carasoul-1.webp');"loading="lazy" ></div></div>
+    <div class="curve-box"><div class="box-inner" style="background-color: #444; background-image: url('assets/carasoul/carasoul-2.webp');"loading="lazy" ></div></div>
+    <div class="curve-box"><div class="box-inner" style="background-color: #555; background-image: url('assets/carasoul/carasoul-3.webp');"loading="lazy" ></div></div>
+    <div class="curve-box"><div class="box-inner" style="background-color: #666; background-image: url('assets/carasoul/carasoul-4.webp');"loading="lazy" ></div></div>
+    <div class="curve-box"><div class="box-inner" style="background-color: #777; background-image: url('assets/carasoul/carasoul-5.webp');"loading="lazy" ></div></div>
+    <div class="curve-box"><div class="box-inner" style="background-color: #888; background-image: url('assets/carasoul/carasoul-1.webp');"loading="lazy" ></div></div>
 `;
 
 // Multiply the items to create the infinite loop

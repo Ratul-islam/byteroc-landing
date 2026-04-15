@@ -85,7 +85,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
       }, observerOptions);
 
-      // Attach the observer to each row
       serviceRows.forEach(row => {
         rowObserver.observe(row);
       });

@@ -17,7 +17,7 @@
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@400;500;600;700&display=swap"
         rel="stylesheet" />
 
-    <link rel="icon" type="image/x-icon" sizes="32x32"  href="./assets/test.svg" />
+    <link rel="icon" type="image/x-icon" sizes="32x32"  href="./assets/test.svg/>
     <link rel="stylesheet" href="css/fonts.css" />
     <link rel="stylesheet" href="css/animations.css" />
     <link rel="stylesheet" href="css/main.css" />
@@ -34,23 +34,26 @@
 <body>
 
   
+   
+  
     <section id="hero">
-        <img class="main-logo" data-animate src="./assets/main.png" loading="lazy" alt="byteroc" />
+        <img class="main-logo" data-animate src="./assets/main.webp" alt="byteroc" />
+        
         <div class="hero-headings">
-            <h2 class="split-text">Turning <span  class="diff-font">Creative</span></h2>
+            <h2 class="split-text">Turning <span class="diff-font">Creative</span></h2>
             <h2 class="split-text">Breakthroughs into</h2>
             <div class="hero-last-line">
-                <h2 class="split-text"><span    class="diff-font">Impact</span> Mines</h2>
+                <h2 class="split-text"><span class="diff-font">Impact</span> Mines</h2>
                 <div class="icon-row">
-                    <div class="bubble-icon"><img src="./assets/hero/figma.png" alt="figma icon" loading="lazy"></div>
+                    <div class="bubble-icon"><img src="./assets/hero/figma.webp" alt="figma icon"></div>
                     
                     <svg class="arrow-pointer" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                         <line x1="5" y1="12" x2="19" y2="12"></line>
                         <polyline points="12 5 19 12 12 19"></polyline>
                     </svg>
                 
-                    <div class="bubble-icon"><img src="./assets/hero/monkey.png" alt="monkey icon" loading="lazy"></div>
-                    <div class="bubble-icon"><img src="./assets/hero/klaviyo.png" alt="klaviyo icon" loading="lazy"></div>
+                    <div class="bubble-icon"><img src="./assets/hero/monkey.webp" alt="monkey icon"></div>
+                    <div class="bubble-icon"><img src="./assets/hero/klaviyo.webp" alt="klaviyo icon"></div>
                 </div>
             </div>
         </div>
@@ -60,14 +63,14 @@
                 <img src="./assets/hero/hero1.webp" alt="sample 1" data-category="E-Commerce Redesign"
                     data-title="Nike Global App" data-stack1="./assets/hero/imageset/first-1.webp"
                     data-stack2="./assets/hero/imageset/first-4.webp" data-stack3="./assets/hero/imageset/first-3.webp"
-                    data-stack4="./assets/hero/imageset/first-2.webp" loading="lazy">
+                    data-stack4="./assets/hero/imageset/first-2.webp">
             </div>
 
             <div>
                 <img src="./assets/hero/hero2.webp" alt="sample 2" data-category="Web3 Marketplace"
                     data-title="Pallet Ross" data-stack1="./assets/hero/imageset/sec-1.webp"
                     data-stack2="./assets/hero/imageset/sec-2.webp" data-stack3="./assets/hero/imageset/sec-3.webp"
-                    data-stack4="./assets/hero/imageset/sec-4.webp" loading="lazy">
+                    data-stack4="./assets/hero/imageset/sec-4.webp">
             </div>
 
             <div>
@@ -90,6 +93,30 @@
             </div>
         </div>
     </section>
+
+    <div id="project-modal" class="project-modal">
+        <div class="modal-overlay" onclick="closeModal()"></div>
+        <div class="modal-content-wrapper">
+            <div class="modal-top-bar">
+                <button class="btn-close-text" onclick="closeModal()">Close</button>
+            </div>
+            <div class="modal-text-content">
+                <p id="modal-category" class="category-tag"></p>
+                <h2 id="modal-title"></h2>
+            </div>
+            <div class="modal-spacer"></div>
+            <div class="modal-bottom-content">
+                <button class="btn-primary">View Project</button>
+            </div>
+        </div>
+        <div id="modal-stack" class="modal-stack">
+            <img id="modal-stack-1" class="modal-card modal-s1" src="" alt="" />
+            <img id="modal-stack-2" class="modal-card modal-s2" src="" alt="" />
+            <img id="modal-stack-3" class="modal-card modal-s3" src="" alt="" />
+            <img id="modal-stack-4" class="modal-card modal-s4" src="" alt="" />
+            <img id="modal-center-image" class="modal-card modal-main" src="" alt="" />
+        </div>
+    </div>
 
     <div id="project-modal" class="project-modal">
         <div class="modal-overlay" onclick="closeModal()"></div>
@@ -226,8 +253,8 @@
             <div class="card card-team tilt-5">
                 <p>The Byteroc team is a experience group of marketing professionals united by one goal</p>
                 <div class="avatars">
-                    <img src="assets/what-2.png" alt="" class="avatar" loading="lazy" style="z-index: 3;">
-                    <img src="assets/what-3.png" alt="" class="avatar" loading="lazy" style="z-index: 2;">
+                    <img src="assets/what-2.webp" alt="" class="avatar" loading="lazy" style="z-index: 3;">
+                    <img src="assets/what-3.webp" alt="" class="avatar" loading="lazy" style="z-index: 2;">
                     <div class="avatar-btn">+</div>
                 </div>
             </div>
@@ -251,8 +278,8 @@
             <div class="card card-team tilt-5">
                 <p>The Byteroc team is a experience group of marketing professionals united by one goal</p>
                 <div class="avatars">
-                    <img src="assets/what-2.png" alt="" loading="lazy" class="avatar" style="z-index: 3;">
-                    <img src="assets/what-3.png" alt="" loading="lazy" class="avatar" style="z-index: 2;">
+                    <img src="assets/what-2.webp" alt="" loading="lazy" class="avatar" style="z-index: 3;">
+                    <img src="assets/what-3.webp" alt="" loading="lazy" class="avatar" style="z-index: 2;">
                     <div class="avatar-btn">+</div>
                 </div>
             </div>
@@ -453,7 +480,7 @@
             <div class="middle">
                 <div>
                     <div>
-                        <img src="/assets/main.png" loading="lazy" alt="ByteRoc logo">
+                        <img src="/assets/main.webp" loading="lazy" alt="ByteRoc logo">
                     </div>
                 </div>
                 <div class="vine">
@@ -699,7 +726,7 @@
 
         <div class="testimonial-container">
             <header class="testimonial-header">
-                <img src="assets/stars.png" class="star-rating" loading="lazy" alt="Stars">
+                <img src="assets/stars.webp" class="star-rating" loading="lazy" alt="Stars">
                 <h2 class="main-title headline">
                     Trusted By the <span class="serif-italic">World's</span> Fastest<br>
                     <span class="serif-italic">Growing</span> Email Marketing <span class="serif-italic">Agency</span>
@@ -843,7 +870,7 @@
                         </div>
                     </div>
                     <div class="col-img">
-                        <img src="assets/plan1.png"  loading="lazy">
+                        <img src="assets/plan1.webp"  loading="lazy">
                     </div>
                     <div class="col-list">
                         <ul>
@@ -865,7 +892,7 @@
                         </div>
                     </div>
                     <div class="col-img">
-                        <img src="assets/plan2.png" alt="Media" loading="lazy">
+                        <img src="assets/plan2.webp" alt="Media" loading="lazy">
                     </div>
                     <div class="col-list">
                         <ul>
@@ -887,7 +914,7 @@
                         </div>
                     </div>
                     <div class="col-img">
-                        <img src="assets/plan3.png" alt="Paid" loading="lazy">
+                        <img src="assets/plan3.webp" alt="Paid" loading="lazy">
                     </div>
                     <div class="col-list">
                         <ul>
@@ -909,7 +936,7 @@
                         </div>
                     </div>
                     <div class="col-img">
-                        <img src="assets/plan2.png" alt="Email" loading="lazy">
+                        <img src="assets/plan2.webp" alt="Email" loading="lazy">
                     </div>
                     <div class="col-list">
                         <ul>
@@ -999,7 +1026,7 @@
                     </div>
                     <div class="footer-logo">
 
-                        <img src="./assets/main.png" alt="">
+                        <img src="./assets/main.webp" alt="">
                     </div>
                 </div>
 

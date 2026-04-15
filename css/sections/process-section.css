@@ -81,7 +81,7 @@
 
   .comp {
       height: clamp(80px, 10vw, 126px);
-      background-image: url("../../assets/comp.png");
+      background-image: url("../../assets/comp.webp");
       
       width: 100vw;
       margin-top: clamp(70px, 10vw, 111px);
