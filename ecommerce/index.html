@@ -1,0 +1,1418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Shopify Store Is Leaving Money on the Table — ByteRoc</title>
+<meta name="description" content="Most Shopify stores generate 8–12% of revenue from email. Top stores generate 35–45%. Find out your exact gap — free audit delivered in 48 hours.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link rel="icon" type="image/x-icon" sizes="32x32" href="../assets/main.svg"/>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&amp;family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&amp;display=swap" rel="stylesheet">
+<style>
+
+:root{
+  --ink:#090B11;--s1:#0E1118;--s2:#13161F;--s3:#1A1F2E;
+  --bd:#222840;--bd2:#1C2235;--mud:#4A5470;
+  --cream:#E8EBE4;--cream2:#C4C9BE;--csub:#8B93A8;--cdim:#525C74;
+  --white:#FFFFFF;--ow:#F5F6F4;--ow2:#EDEEED;--blt:#E0E2DF;
+  --tbody:#5A5F6E;--tlt:#8D919E;--tink:#090B11;
+  --em:#00E5A0;--emh:#00CC8E;--emd:rgba(0,229,160,.12);
+  --ems:#E6FDF6;--emdk:#00694A;
+  --ab:#F5A623;--abs:#FEF3E2;--abdk:#7A4F0D;
+  --red:#E24B4A;--reds:#FFF0F0;--reddk:#991B1B;
+  --r:12px;--rlg:18px;--mw:1100px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;font-size:15px}
+body{font-family:'DM Sans',sans-serif;background:var(--white);color:var(--tink);line-height:1.6;overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+button{border:none;cursor:pointer;font-family:'DM Sans',sans-serif}
+img{max-width:100%;display:block}
+
+/* ── Layout ── */
+.wrap{max-width:var(--mw);margin:0 auto;padding:0 clamp(18px,4vw,48px)}
+.section{padding:clamp(60px,8vw,100px) 0}
+.dark{background:var(--ink);position:relative;overflow:hidden}
+.dark>.dots{position:absolute;inset:0;background-image:radial-gradient(var(--bd) 1px,transparent 1px);background-size:26px 26px;opacity:.45;pointer-events:none;z-index:0}
+.dark>.wrap{position:relative;z-index:1}
+.ow{background:var(--ow)}
+.ow2{background:var(--ow2)}
+
+/* ── Type ── */
+.fd{font-family:'Syne',sans-serif;font-weight:800;letter-spacing:-.035em;line-height:1.05}
+.fd7{font-family:'Syne',sans-serif;font-weight:700;letter-spacing:-.025em;line-height:1.1}
+.sz1{font-size:clamp(34px,5vw,62px)}
+.sz2{font-size:clamp(24px,3.2vw,40px)}
+.sz3{font-size:clamp(18px,2vw,24px)}
+.em-w{color:var(--em)}
+.cr-w{color:var(--cream)}
+.label{font-family:'DM Sans',sans-serif;font-weight:600;font-size:10px;letter-spacing:.09em;text-transform:uppercase}
+
+/* ── Pill badges ── */
+.pill{display:inline-flex;align-items:center;gap:6px;padding:5px 14px;border-radius:100px;font-size:11px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;margin-bottom:18px}
+.pill::before{content:'';width:6px;height:6px;border-radius:50%;background:currentColor;flex-shrink:0}
+.pill-dk{background:var(--bd);color:var(--em)}
+.pill-lt{background:var(--ems);color:var(--emdk)}
+.pill-red{background:var(--reds);color:var(--reddk)}
+
+/* ── Buttons ── */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:'DM Sans',sans-serif;font-weight:600;font-size:15px;border-radius:9px;transition:all .2s ease;cursor:pointer;border:1.5px solid transparent;white-space:nowrap}
+.btn:active{transform:scale(.975)}
+.bp{padding:14px 28px;background:var(--em);color:var(--ink);border-color:var(--em)}
+.bp:hover{background:var(--emh);border-color:var(--emh);transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,229,160,.25)}
+.bo{padding:13px 26px;background:transparent;color:var(--em);border-color:var(--em)}
+.bo:hover{background:var(--emd)}
+.bg{padding:13px 26px;background:transparent;color:var(--cream2);border-color:rgba(232,235,228,.22)}
+.bg:hover{border-color:rgba(232,235,228,.44)}
+.bico{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+
+/* ── Nav ── */
+#nav{position:fixed;top:0;left:0;right:0;z-index:999;padding:14px 0;transition:all .3s}
+#nav.scrolled{background:rgba(9,11,17,.97);backdrop-filter:blur(16px);border-bottom:1px solid var(--bd2);padding:10px 0}
+.nav-inner{display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:'Syne',sans-serif;font-weight:800;font-size:20px;letter-spacing:-.04em}
+.logo .b{color:var(--cream)}.logo .r{color:var(--em)}
+.nav-tag{font-size:12px;color:var(--csub);display:flex;align-items:center;gap:6px}
+.nav-tag::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--em)}
+
+/* ── Hero ── */
+.hero{padding:clamp(120px,14vw,160px) 0 clamp(60px,8vw,90px)}
+.hero-eyebrow{display:flex;align-items:center;gap:10px;margin-bottom:22px}
+.hero-eyebrow-line{width:22px;height:1.5px;background:var(--em)}
+.hero-eyebrow-txt{font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--em)}
+.hero-sub{font-size:clamp(15px,1.35vw,18px);color:var(--csub);line-height:1.75;max-width:580px;margin-bottom:32px}
+.hero-cta-row{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:20px}
+.hero-micro{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.hero-micro span{font-size:12px;color:var(--cdim);display:flex;align-items:center;gap:5px}
+.hero-micro span::before{content:'';width:4px;height:4px;border-radius:50%;background:var(--em);opacity:.55}
+.hero-visual{position:relative;display:flex;justify-content:flex-end;align-items:center}
+
+/* ── Floating email cards ── */
+.email-stack{position:relative;width:420px;height:380px}
+.ecard{position:absolute;background:var(--s1);border:1px solid var(--bd);border-radius:14px;padding:16px 20px;transition:transform .6s ease}
+.ecard-header{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.ecard-dot{width:8px;height:8px;border-radius:50%}
+.ecard-label{font-size:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--mud)}
+.ecard-title{font-family:'Syne',sans-serif;font-weight:700;font-size:13px;color:var(--cream);margin-bottom:6px}
+.ecard-body{font-size:11px;color:var(--csub);line-height:1.5}
+.ecard-metric{display:flex;align-items:baseline;gap:5px;margin-top:10px}
+.ecard-num{font-family:'Syne',sans-serif;font-weight:800;font-size:22px;color:var(--em)}
+.ecard-unit{font-size:11px;color:var(--mud)}
+.ec1{width:260px;top:0;left:0;transform:rotate(-2deg)}
+.ec2{width:280px;top:80px;right:0;transform:rotate(1.5deg)}
+.ec3{width:240px;bottom:0;left:40px;transform:rotate(-1deg)}
+.ec4{width:200px;bottom:60px;right:20px;transform:rotate(2deg)}
+
+/* ── Trust bar ── */
+.trust-bar{padding:24px 0;border-top:1px solid var(--bd2);border-bottom:1px solid var(--bd2)}
+.trust-inner{display:flex;align-items:center;gap:clamp(16px,3vw,40px);flex-wrap:wrap;justify-content:center}
+.trust-item{display:flex;align-items:center;gap:8px;font-size:12px;font-weight:600;color:var(--csub);white-space:nowrap}
+.trust-item svg{opacity:.5;fill:var(--csub)}
+.trust-divider{width:1px;height:24px;background:var(--bd)}
+
+/* ── Pain section ── */
+.pain-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:32px}
+.pain-item{display:flex;align-items:flex-start;gap:12px;background:var(--s1);border:1px solid var(--bd);border-radius:10px;padding:16px;transition:border-color .25s}
+.pain-item:hover{border-color:rgba(226,75,74,.4)}
+.pain-x{width:20px;height:20px;border-radius:50%;background:rgba(226,75,74,.15);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+.pain-x svg{width:9px;height:9px;stroke:var(--red);fill:none;stroke-width:2.5;stroke-linecap:round}
+.pain-text{font-size:13.5px;color:var(--cream2);line-height:1.55}
+.pain-text strong{color:var(--cream);font-weight:600}
+
+/* ── Stats strip ── */
+.stats-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--bd);border-radius:14px;overflow:hidden;margin:clamp(40px,5vw,64px) 0}
+.stat-box{background:var(--s2);padding:28px 24px;text-align:center}
+.stat-val{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(28px,3.5vw,42px);color:var(--em);letter-spacing:-.03em;line-height:1;margin-bottom:6px}
+.stat-lbl{font-size:12px;color:var(--csub);line-height:1.45}
+
+/* ── Flow Visualiser ── */
+.flow-viz{background:var(--s1);border:1px solid var(--bd);border-radius:var(--rlg);padding:clamp(24px,3vw,36px);margin-top:40px;position:relative;overflow:hidden}
+.flow-toggle-row{display:flex;align-items:center;gap:0;background:var(--bd);border-radius:8px;padding:3px;width:fit-content;margin-bottom:28px}
+.flow-toggle-btn{padding:8px 20px;border-radius:6px;font-family:'DM Sans',sans-serif;font-weight:600;font-size:12px;cursor:pointer;border:none;transition:all .2s;color:var(--csub);background:transparent}
+.flow-toggle-btn.active{background:var(--ink);color:var(--em)}
+.flow-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;min-height:320px}
+.flow-col{position:relative}
+.flow-col-label{font-size:10px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;margin-bottom:16px;display:flex;align-items:center;gap:6px}
+.flow-col-label::before{content:'';width:8px;height:8px;border-radius:50%}
+.flow-col-before .flow-col-label{color:var(--reddk)}
+.flow-col-before .flow-col-label::before{background:var(--red)}
+.flow-col-after .flow-col-label{color:var(--emdk)}
+.flow-col-after .flow-col-label::before{background:var(--em)}
+.flow-node{display:flex;align-items:center;gap:10px;padding:10px 14px;border-radius:8px;margin-bottom:6px;font-size:12.5px;transition:all .4s ease}
+.node-empty{background:rgba(226,75,74,.07);border:1px dashed rgba(226,75,74,.25);color:var(--reddk);opacity:.6}
+.node-filled{background:rgba(0,229,160,.06);border:1px solid rgba(0,229,160,.2);color:var(--cream2)}
+.node-missing{background:var(--s2);border:1px dashed var(--bd);color:var(--mud);font-style:italic}
+.node-icon{width:26px;height:26px;border-radius:6px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.node-icon-em{background:rgba(0,229,160,.12)}
+.node-icon-em svg{stroke:var(--em);width:13px;height:13px;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.node-icon-red{background:rgba(226,75,74,.12)}
+.node-icon-red svg{stroke:var(--red);width:13px;height:13px;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.node-revenue{margin-left:auto;font-family:'Syne',sans-serif;font-weight:700;font-size:11px;color:var(--em);flex-shrink:0}
+.flow-connector{width:1px;background:linear-gradient(to bottom,var(--bd),transparent);height:6px;margin:0 0 0 22px}
+.flow-divider{width:1px;background:var(--bd);position:absolute;left:50%;top:48px;bottom:0}
+
+/* ── Calculator ── */
+.calc-wrap{background:var(--s1);border:1px solid var(--bd);border-radius:var(--rlg);padding:clamp(24px,3vw,40px);margin-top:40px}
+.calc-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:start}
+.calc-inputs{}
+.input-group{margin-bottom:20px}
+.input-label{display:flex;align-items:center;justify-content:space-between;font-size:12px;font-weight:600;color:var(--cream2);margin-bottom:8px}
+.input-val{font-family:'Syne',sans-serif;font-weight:700;color:var(--em);font-size:13px}
+.calc-input-wrap{display:flex;align-items:center;gap:0}
+.calc-prefix{background:var(--bd);border:1.5px solid var(--bd);border-right:none;padding:10px 14px;border-radius:8px 0 0 8px;font-size:13px;font-weight:600;color:var(--em);font-family:'DM Sans',sans-serif}
+.calc-inp{width:100%;padding:10px 14px;background:var(--s2);border:1.5px solid var(--bd);border-left:none;border-radius:0 8px 8px 0;font-family:'DM Sans',sans-serif;font-size:14px;color:var(--cream);outline:none;transition:border-color .2s}
+.calc-inp:focus{border-color:var(--em)}
+.range-track{width:100%;-webkit-appearance:none;appearance:none;height:4px;border-radius:2px;background:var(--bd);outline:none;cursor:pointer;margin-top:4px}
+.range-track::-webkit-slider-thumb{-webkit-appearance:none;width:18px;height:18px;border-radius:50%;background:var(--em);cursor:pointer;box-shadow:0 0 0 3px rgba(0,229,160,.2)}
+.range-track::-moz-range-thumb{width:18px;height:18px;border-radius:50%;background:var(--em);cursor:pointer;border:none}
+.calc-result{background:var(--s2);border:1.5px solid var(--bd);border-radius:var(--r);padding:28px;position:relative;overflow:hidden;transition:border-color .3s}
+.calc-result.highlight{border-color:var(--em);box-shadow:0 0 40px rgba(0,229,160,.08)}
+.calc-result::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(0,229,160,.04) 0%,transparent 60%)}
+.calc-result>*{position:relative}
+.result-label{font-size:10px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--mud);margin-bottom:8px}
+.result-gap{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(34px,4.5vw,52px);color:var(--em);letter-spacing:-.04em;line-height:1;margin-bottom:6px}
+.result-sub{font-size:13px;color:var(--csub);line-height:1.65;margin-bottom:20px}
+.result-kpis{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:22px}
+.kpi{background:var(--bd);border-radius:8px;padding:12px}
+.kpi-v{font-family:'Syne',sans-serif;font-weight:700;font-size:19px;color:var(--cream);letter-spacing:-.02em}
+.kpi-l{font-size:10px;color:var(--mud);margin-top:2px}
+.kpi-v.em{color:var(--em)}
+.kpi-v.ab{color:var(--ab)}
+
+/* ── Audit Score ── */
+.audit-wrap{background:var(--s1);border:1px solid var(--bd);border-radius:var(--rlg);padding:clamp(24px,3vw,40px);margin-top:40px;overflow:hidden;position:relative}
+.audit-steps{display:flex;flex-direction:column;gap:0}
+.audit-step{display:none}
+.audit-step.active{display:block}
+.audit-progress{display:flex;gap:4px;margin-bottom:28px}
+.ap{height:3px;flex:1;background:var(--bd);border-radius:2px;transition:background .3s}
+.ap.done{background:var(--em)}
+.ap.current{background:rgba(0,229,160,.5)}
+.audit-q{font-family:'Syne',sans-serif;font-weight:700;font-size:clamp(18px,2vw,22px);color:var(--cream);margin-bottom:8px;letter-spacing:-.025em}
+.audit-q-sub{font-size:13.5px;color:var(--csub);margin-bottom:24px;line-height:1.6}
+.audit-options{display:flex;flex-direction:column;gap:8px}
+.audit-opt{display:flex;align-items:center;gap:12px;padding:14px 18px;background:var(--s2);border:1.5px solid var(--bd);border-radius:10px;cursor:pointer;transition:all .2s;font-size:14px;color:var(--cream2)}
+.audit-opt:hover{border-color:var(--em);background:rgba(0,229,160,.04);color:var(--cream)}
+.audit-opt.selected{border-color:var(--em);background:rgba(0,229,160,.08);color:var(--cream)}
+.audit-opt-icon{width:22px;height:22px;border-radius:50%;border:1.5px solid var(--bd);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .2s}
+.audit-opt.selected .audit-opt-icon{background:var(--em);border-color:var(--em)}
+.audit-opt.selected .audit-opt-icon::after{content:'✓';font-size:11px;color:var(--ink);font-weight:700}
+.audit-nav{display:flex;align-items:center;justify-content:space-between;margin-top:24px}
+.audit-step-count{font-size:12px;color:var(--mud)}
+
+/* Score result */
+.score-result{text-align:center;padding:20px 0}
+.score-circle{width:120px;height:120px;border-radius:50%;background:var(--s2);border:3px solid var(--bd);display:flex;flex-direction:column;align-items:center;justify-content:center;margin:0 auto 24px;position:relative;transition:border-color .5s}
+.score-num{font-family:'Syne',sans-serif;font-weight:800;font-size:32px;letter-spacing:-.04em;line-height:1}
+.score-denom{font-size:13px;color:var(--mud)}
+.score-title{font-family:'Syne',sans-serif;font-weight:800;font-size:22px;color:var(--cream);margin-bottom:8px;letter-spacing:-.025em}
+.score-desc{font-size:14px;color:var(--csub);line-height:1.65;max-width:480px;margin:0 auto 24px}
+.score-gaps{display:flex;flex-direction:column;gap:7px;margin-bottom:28px;text-align:left}
+.score-gap-item{display:flex;align-items:flex-start;gap:10px;background:var(--reds);border-radius:7px;padding:10px 14px;font-size:13px;color:var(--reddk);line-height:1.45}
+.score-gap-x{flex-shrink:0;font-weight:700;font-size:13px}
+
+/* ── How it works ── */
+.hiw-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:40px;position:relative}
+.hiw-steps::before{content:'';position:absolute;top:34px;left:calc(33.33% - 20px);right:calc(33.33% - 20px);height:1px;background:linear-gradient(to right,var(--em),var(--em));opacity:.3;z-index:0}
+.hiw-step{text-align:center;padding:0 24px;position:relative;z-index:1}
+.hiw-num{width:68px;height:68px;border-radius:50%;background:var(--s2);border:1.5px solid var(--bd);display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-weight:800;font-size:22px;color:var(--em);margin:0 auto 20px;transition:border-color .3s,box-shadow .3s}
+.hiw-step:hover .hiw-num{border-color:var(--em);box-shadow:0 0 24px rgba(0,229,160,.2)}
+.hiw-step h3{font-family:'Syne',sans-serif;font-weight:700;font-size:16px;color:var(--cream);margin-bottom:8px;letter-spacing:-.02em}
+.hiw-step p{font-size:13px;color:var(--csub);line-height:1.65}
+.hiw-badge{display:inline-block;padding:3px 10px;border-radius:100px;font-size:10px;font-weight:600;margin-top:10px}
+
+/* ── Offer box ── */
+.offer-box{background:var(--s1);border:1.5px solid var(--em);border-radius:var(--rlg);padding:clamp(28px,3.5vw,44px);margin-top:40px;position:relative;overflow:hidden}
+.offer-box::before{content:'Free for a limited time';position:absolute;top:20px;right:-32px;background:var(--em);color:var(--ink);font-family:'DM Sans',sans-serif;font-weight:700;font-size:10px;letter-spacing:.06em;text-transform:uppercase;padding:5px 40px;transform:rotate(25deg)}
+.offer-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+.offer-items{display:flex;flex-direction:column;gap:10px;margin-bottom:24px}
+.offer-item{display:flex;align-items:flex-start;gap:10px;font-size:14px;color:var(--cream2);line-height:1.5}
+.offer-check{width:20px;height:20px;border-radius:50%;background:rgba(0,229,160,.12);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.offer-check svg{width:10px;height:10px;stroke:var(--em);fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+
+/* ── Form ── */
+.form-box{background:var(--s2);border:1px solid var(--bd);border-radius:var(--r);padding:28px}
+.form-title{font-family:'Syne',sans-serif;font-weight:700;font-size:19px;color:var(--cream);margin-bottom:4px;letter-spacing:-.025em}
+.form-sub{font-size:13px;color:var(--csub);margin-bottom:20px}
+.field{margin-bottom:12px}
+.field label{display:block;font-size:12px;font-weight:600;color:var(--cream2);margin-bottom:5px;letter-spacing:.01em}
+.field input,.field select{width:100%;padding:11px 14px;background:var(--s1);border:1.5px solid var(--bd);border-radius:8px;font-family:'DM Sans',sans-serif;font-size:14px;color:var(--cream);outline:none;transition:border-color .2s}
+.field input:focus,.field select:focus{border-color:var(--em)}
+.field input::placeholder{color:var(--mud)}
+.field select{cursor:pointer;-webkit-appearance:none;color:var(--cream)}
+.field select option{background:var(--s1)}
+.submit-btn{width:100%;padding:14px;border-radius:9px;font-family:'DM Sans',sans-serif;font-weight:700;font-size:15px;background:var(--em);color:var(--ink);border:none;cursor:pointer;transition:all .2s;margin-top:4px;display:flex;align-items:center;justify-content:center;gap:8px}
+.submit-btn:hover{background:var(--emh);transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,229,160,.3)}
+.form-note{font-size:11px;color:var(--mud);text-align:center;margin-top:10px;line-height:1.5}
+
+/* ── FAQ ── */
+.faq-list{margin-top:32px;display:grid;gap:0}
+.faq-item{border-bottom:1px solid var(--blt)}
+.faq-q{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px 0;cursor:pointer;user-select:none}
+.faq-q h3{font-family:'DM Sans',sans-serif;font-weight:600;font-size:15px;color:var(--tink);flex:1;line-height:1.4;letter-spacing:-.01em}
+.faq-q:hover h3{color:var(--emdk)}
+.faq-tog{width:26px;height:26px;border-radius:50%;background:var(--ow2);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .3s}
+.faq-tog svg{width:12px;height:12px;stroke:var(--tlt);fill:none;stroke-width:2;stroke-linecap:round;transition:.3s}
+.faq-item.open .faq-tog{background:var(--ems);transform:rotate(45deg)}
+.faq-item.open .faq-tog svg{stroke:var(--emdk)}
+.faq-ans{max-height:0;overflow:hidden;transition:max-height .4s ease}
+.faq-item.open .faq-ans{max-height:300px}
+.faq-ans p{font-size:14px;color:var(--tbody);line-height:1.75;padding-bottom:18px}
+
+/* ── Final CTA ── */
+.fcta{text-align:center}
+.fcta h2{margin-bottom:14px}
+.fcta p{font-size:clamp(14px,1.3vw,17px);color:var(--csub);line-height:1.75;max-width:560px;margin:0 auto 32px}
+.fcta-btns{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-bottom:18px}
+.trust-row{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap}
+.trust-tag{font-size:12px;color:var(--cdim);display:flex;align-items:center;gap:5px}
+.trust-tag::before{content:'';width:4px;height:4px;border-radius:50%;background:var(--em);opacity:.5}
+
+/* ── Guarantee ── */
+.guarantee{background:var(--ems);border-top:1px solid rgba(0,229,160,.2);border-bottom:1px solid rgba(0,229,160,.2);padding:28px 0}
+.guarantee-inner{display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+.g-icon{width:48px;height:48px;border-radius:50%;background:var(--emdk);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.g-icon svg{width:24px;height:24px;stroke:#fff;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.g-text h3{font-family:'Syne',sans-serif;font-weight:700;font-size:17px;color:var(--emdk);letter-spacing:-.02em;margin-bottom:4px}
+.g-text p{font-size:13px;color:var(--emdk);opacity:.8;line-height:1.6}
+
+/* ── Footer ── */
+footer{background:var(--s1);border-top:1px solid var(--bd2);padding:22px 0}
+.footer-inner{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.footer-links{display:flex;gap:20px}
+.footer-links a{font-size:12px;color:var(--mud);transition:color .2s}
+.footer-links a:hover{color:var(--em)}
+.footer-copy{font-size:11px;color:var(--mud)}
+
+/* ── Animations ── */
+.rv{opacity:0;transform:translateY(22px);transition:opacity .65s ease,transform .65s ease}
+.rv.in{opacity:1;transform:translateY(0)}
+/* Fallback: if JS fails or is slow, show content after 1.5s via animation */
+@keyframes fallback-show{to{opacity:1;transform:none}}
+.rv{animation:fallback-show 0s 1.5s forwards}
+.d1{transition-delay:.07s}.d2{transition-delay:.14s}.d3{transition-delay:.21s}
+.d4{transition-delay:.28s}.d5{transition-delay:.35s}.d6{transition-delay:.42s}
+.counter{transition:all .3s}
+
+/* ── Responsive ── */
+@media(max-width:768px){
+  .page-hero-grid{grid-template-columns:1fr!important}
+}
+@media(max-width:900px){
+  .calc-grid,.offer-grid{grid-template-columns:1fr}
+  .pain-grid{grid-template-columns:1fr}
+  .hiw-steps{grid-template-columns:1fr;gap:28px}
+  .hiw-steps::before{display:none}
+  .stats-strip{grid-template-columns:1fr 1fr}
+  .flow-grid{grid-template-columns:1fr}
+  .flow-divider{display:none}
+  .result-kpis{grid-template-columns:1fr 1fr}
+}
+@media(max-width:560px){
+  .hero-cta-row{flex-direction:column;align-items:stretch}
+  .hero-cta-row .btn{justify-content:center}
+  .stats-strip{grid-template-columns:1fr 1fr}
+  .result-kpis{grid-template-columns:1fr 1fr}
+  .offer-box::before{display:none}
+}
+
+
+
+    .btn--ghost {
+      display: block;
+      width: 100%;
+      text-align: center;
+      padding: 12px 24px;
+      background: transparent;
+      color: var(--cream-2);
+      border-color: rgba(232, 235, 228, .2);
+      color: white;
+    }
+
+    .btn--ghost:hover {
+      border-color: rgba(232, 235, 228, .45);
+      background: rgba(255, 255, 255, .04)
+    }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav" class="dark">
+  <div class="wrap nav-inner">
+    <a href="/" class="logo"><span class="b">Byte</span><span class="r">Roc</span></a>
+    <div class="nav-tag">Email Marketing Agency</div>
+    <a href="#offer" class="btn bp bsm" style="padding:9px 18px;font-size:13px">Get Free Audit</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="dark" style="padding:clamp(100px,11vw,130px) 0 clamp(56px,7vw,80px)">
+  <div class="dots"></div>
+  <div class="wrap" style="position:relative;z-index:1">
+
+    <!-- FULL-WIDTH HEADLINE -->
+    <div class="rv" style="margin-bottom:clamp(24px,3vw,40px)">
+      <div class="hero-eyebrow" style="margin-bottom:14px">
+        <div class="hero-eyebrow-line"></div>
+        <span class="hero-eyebrow-txt">For Shopify &amp; eCommerce Brands</span>
+      </div>
+      <h1 style="font-family:'Syne',sans-serif;font-weight:800;letter-spacing:-.035em;line-height:1.06;font-size:clamp(32px,4.2vw,58px);color:var(--cream)">
+        Your Shopify Store Is Generating
+        <span style="color:var(--em)"> 8&ndash;12%</span> From Email.
+        <span style="color:var(--cream2)"> It Should Be 35&ndash;45%.</span>
+      </h1>
+    </div>
+
+    <!-- DIVIDER -->
+    <div style="height:1px;background:var(--bd);margin-bottom:clamp(24px,3vw,40px)"></div>
+
+    <!-- TWO-COLUMN: body+CTA+trust LEFT — cards RIGHT -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,5vw,72px);align-items:start">
+
+      <!-- LEFT -->
+      <div class="rv d1" style="display:flex;flex-direction:column;gap:22px">
+
+        <p style="font-size:clamp(14px,1.3vw,17px);color:var(--csub);line-height:1.78;max-width:480px">
+          Most Shopify stores have Klaviyo set up, a few basic emails running, and email sitting under 15% of revenue. The brands generating 40%+ from email are using a properly built program. Here is exactly what yours is missing.
+        </p>
+
+        <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap">
+          <a href="#audit" class="btn bp">
+            See What is Missing &mdash; Free
+            <svg class="bico" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="#calculator" class="btn bg" style="font-size:14px;padding:12px 20px">Calculate Your Gap</a>
+        </div>
+
+        <!-- AUDIT PREVIEW — fills space + increases conversion -->
+        <div style="border:1px solid var(--bd);border-radius:10px;padding:16px 18px;background:var(--s2)">
+          <div style="font-size:10px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--em);margin-bottom:12px">What your free audit reveals</div>
+          <div style="display:flex;flex-direction:column;gap:8px">
+            <div style="display:flex;align-items:flex-start;gap:10px;font-size:13px;color:var(--cream2);line-height:1.45">
+              <span style="width:16px;height:16px;border-radius:50%;background:rgba(0,229,160,.12);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;font-size:9px;color:var(--em);font-weight:700">→</span>
+              Your exact email revenue gap in dollars — not a guess, a calculated number
+            </div>
+            <div style="display:flex;align-items:flex-start;gap:10px;font-size:13px;color:var(--cream2);line-height:1.45">
+              <span style="width:16px;height:16px;border-radius:50%;background:rgba(0,229,160,.12);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;font-size:9px;color:var(--em);font-weight:700">→</span>
+              Every missing flow ranked by revenue impact — cart, welcome, post-purchase, win-back
+            </div>
+            <div style="display:flex;align-items:flex-start;gap:10px;font-size:13px;color:var(--cream2);line-height:1.45">
+              <span style="width:16px;height:16px;border-radius:50%;background:rgba(0,229,160,.12);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;font-size:9px;color:var(--em);font-weight:700">→</span>
+              Deliverability score — is your email landing in inbox or spam right now?
+            </div>
+            <div style="display:flex;align-items:flex-start;gap:10px;font-size:13px;color:var(--cream2);line-height:1.45">
+              <span style="width:16px;height:16px;border-radius:50%;background:rgba(0,229,160,.12);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;font-size:9px;color:var(--em);font-weight:700">→</span>
+              A written priority action plan — yours to keep and act on, even without us
+            </div>
+          </div>
+          <div style="margin-top:12px;padding-top:12px;border-top:1px solid var(--bd);font-size:11px;color:var(--mud)">Delivered as a written report within 48 hours · No call required · Free forever</div>
+        </div>
+
+
+        
+      </div>
+
+      <!-- RIGHT: comparison cards -->
+      <div class="rv d2" style="display:flex;flex-direction:column;gap:10px">
+
+        <div style="background:var(--s1);border:1px solid var(--bd);border-radius:14px;padding:18px 20px;transition:transform .25s,border-color .25s" onmouseover="this.style.transform='translateY(-3px)';this.style.borderColor='rgba(226,75,74,.4)'" onmouseout="this.style.transform='none';this.style.borderColor='var(--bd)'">
+          <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px">
+            <div style="width:7px;height:7px;border-radius:50%;background:#E24B4A"></div>
+            <span style="font-size:10px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:var(--mud)">Current setup &mdash; most stores</span>
+          </div>
+          <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:14px;color:var(--cream);margin-bottom:5px">Abandoned Cart &mdash; 1 email, Klaviyo default</div>
+          <div style="font-size:12px;color:var(--csub);margin-bottom:12px">Sent 1 hour after abandon. No follow-up. No segmentation.</div>
+          <div style="display:flex;align-items:baseline;gap:6px">
+            <span style="font-family:'Syne',sans-serif;font-weight:800;font-size:26px;color:#E24B4A;letter-spacing:-.03em">3%</span>
+            <span style="font-size:11px;color:var(--mud)">cart recovery rate</span>
+          </div>
+        </div>
+
+        <div style="background:var(--s1);border:1.5px solid var(--em);border-radius:14px;padding:18px 20px;position:relative;overflow:hidden;transition:transform .25s" onmouseover="this.style.transform='translateY(-3px)'" onmouseout="this.style.transform='none'">
+          <div style="position:absolute;top:0;right:0;background:var(--em);color:var(--ink);font-family:'DM Sans',sans-serif;font-weight:700;font-size:9px;letter-spacing:.06em;text-transform:uppercase;padding:4px 12px;border-radius:0 0 0 8px">ByteRoc Built</div>
+          <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px">
+            <div style="width:7px;height:7px;border-radius:50%;background:var(--em)"></div>
+            <span style="font-size:10px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:var(--emdk)">Properly built program</span>
+          </div>
+          <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:14px;color:var(--cream);margin-bottom:5px">3-Email Recovery Sequence</div>
+          <div style="font-size:12px;color:var(--csub);margin-bottom:12px">Behavioural triggers. Segmented by order value. Perfectly timed.</div>
+          <div style="display:flex;align-items:baseline;gap:6px">
+            <span style="font-family:'Syne',sans-serif;font-weight:800;font-size:26px;color:var(--em);letter-spacing:-.03em">12%</span>
+            <span style="font-size:11px;color:var(--mud)">cart recovery rate &mdash; 4x improvement</span>
+          </div>
+        </div>
+
+        <div style="background:rgba(245,166,35,.06);border:1px solid rgba(245,166,35,.22);border-radius:14px;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px">
+          <div>
+            <div style="font-size:10px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:var(--abdk);margin-bottom:3px">Monthly gap &mdash; $50K/mo store</div>
+            <div style="font-size:12px;color:var(--ab);opacity:.8">Cart recovery alone. Excludes welcome, post-purchase, win-back.</div>
+          </div>
+          <div style="text-align:right;flex-shrink:0">
+            <div style="font-family:'Syne',sans-serif;font-weight:800;font-size:24px;color:var(--ab);letter-spacing:-.03em">$8K+</div>
+            <div style="font-size:10px;color:var(--abdk)">/month uncaptured</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    
+
+        <!-- TRUST BAR — single inline row -->
+        <div style="display:flex;align-items:stretch;border:1px solid var(--bd);border-radius:10px;overflow:hidden;background:var(--s1); margin-top: 20px;">
+          <div style="display:flex;flex-direction:column;justify-content:center;padding:10px 14px;border-right:1px solid var(--bd);flex:1">
+            <span style="font-size:11px;font-weight:700;color:var(--em);line-height:1.2">Klaviyo</span>
+            <span style="font-size:10px;color:var(--mud);line-height:1.2">Certified Partner</span>
+          </div>
+          <div style="display:flex;flex-direction:column;justify-content:center;padding:10px 14px;border-right:1px solid var(--bd);flex:1">
+            <span style="font-size:11px;font-weight:700;color:var(--cream2);line-height:1.2">Shopify</span>
+            <span style="font-size:10px;color:var(--mud);line-height:1.2">Integrated</span>
+          </div>
+          <div style="display:flex;flex-direction:column;justify-content:center;padding:10px 14px;border-right:1px solid var(--bd);flex:1">
+            <span style="font-size:11px;font-weight:700;color:var(--em);line-height:1.2">30&ndash;45%</span>
+            <span style="font-size:10px;color:var(--mud);line-height:1.2">avg email revenue</span>
+          </div>
+          <div style="display:flex;flex-direction:column;justify-content:center;padding:10px 14px;flex:1">
+            <span style="font-size:11px;font-weight:700;color:var(--cream2);line-height:1.2">100%</span>
+            <span style="font-size:10px;color:var(--mud);line-height:1.2">asset ownership</span>
+          </div>
+        </div>
+  </div>
+</section>
+
+
+
+<!-- PAIN SECTION -->
+<section class="section dark">
+  <div class="dots"></div>
+  <div class="wrap">
+    <div style="max-width:640px;margin-bottom:40px">
+      <span class="pill pill-red rv">Sound familiar?</span>
+      <h2 class="fd sz2 cr-w rv d1">This is what your email<br>program looks like right now</h2>
+      <p style="font-size:16px;color:var(--csub);line-height:1.7;margin-top:14px" class="rv d2">If any of these hit home, you're not alone — and you're not stuck. These are the exact situations ByteRoc was built to fix.</p>
+    </div>
+    <div class="pain-grid">
+      <div class="pain-item rv">
+        <div class="pain-x"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></div>
+        <div class="pain-text"><strong>Klaviyo is set up but barely used.</strong> You're paying for it every month but the only flows running are the defaults. No advanced segmentation, no A/B testing, no lifecycle strategy.</div>
+      </div>
+      <div class="pain-item rv d1">
+        <div class="pain-x"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></div>
+        <div class="pain-text"><strong>Your abandoned cart email is a single message.</strong> Or worse — Klaviyo's default template from 3 years ago. You're recovering 3% of carts. Top stores recover 12–15%.</div>
+      </div>
+      <div class="pain-item rv d2">
+        <div class="pain-x"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></div>
+        <div class="pain-text"><strong>Email is generating 8–12% of revenue.</strong> You've seen brands talk about 40% email revenue attribution and you know something's broken. You just haven't had the bandwidth to fix it.</div>
+      </div>
+      <div class="pain-item rv d3">
+        <div class="pain-x"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></div>
+        <div class="pain-text"><strong>You tried a freelancer.</strong> They built two templates, charged $2,000, and disappeared before the flows were finished. You're still running the half-built version they left behind.</div>
+      </div>
+      <div class="pain-item rv d4">
+        <div class="pain-x"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></div>
+        <div class="pain-text"><strong>Customers buy once and disappear.</strong> There's no post-purchase sequence, no upsell flow, no win-back email. Once they buy, you have no system to bring them back.</div>
+      </div>
+      <div class="pain-item rv d5">
+        <div class="pain-x"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></div>
+        <div class="pain-text"><strong>You're spending $10K+/month on Meta ads</strong> with rising CAC while your email list — an asset you already own — sits there generating almost nothing. Email should be reducing ad dependency, not being ignored.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS STRIP -->
+<section class="dark" style="padding-bottom:0">
+  <div class="dots"></div>
+  <div class="wrap" style="position:relative;z-index:1">
+    <div class="stats-strip rv">
+      <div class="stat-box">
+        <div class="stat-val" data-target="70">0</div>
+        <div class="stat-lbl">of all shopping carts are abandoned before checkout<br><span style="color:var(--mud);font-size:10px">Baymard Institute, 50 studies</span></div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-val" data-target="40">0</div>
+        <div class="stat-lbl">of revenue from email for top 10% Shopify stores<br><span style="color:var(--mud);font-size:10px">Klaviyo 2026 benchmarks</span></div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-val">6.5×</div>
+        <div class="stat-lbl">more revenue from 3-email cart sequence vs single email<br><span style="color:var(--mud);font-size:10px">$24.9M vs $3.8M (Klaviyo)</span></div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-val">18×</div>
+        <div class="stat-lbl">more revenue per recipient from automated flows vs campaigns<br><span style="color:var(--mud);font-size:10px">Klaviyo 2026</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FLOW VISUALISER -->
+<section class="section dark">
+  <div class="dots"></div>
+  <div class="wrap">
+    <div style="max-width:640px;margin-bottom:8px">
+      <span class="pill pill-dk rv">Visual gap analysis</span>
+      <h2 class="fd sz2 cr-w rv d1">Here's what a complete<br>Shopify email program looks like</h2>
+      <p style="font-size:16px;color:var(--csub);line-height:1.7;margin-top:14px" class="rv d2">Toggle between what most Shopify stores are actually running versus what a properly built program looks like. Every empty node is monthly revenue sitting uncaptured.</p>
+    </div>
+    <div class="flow-viz rv d2">
+      <div class="flow-toggle-row">
+        <button class="flow-toggle-btn active" id="btn-before" onclick="showFlow('before')">Most Shopify Stores</button>
+        <button class="flow-toggle-btn" id="btn-after" onclick="showFlow('after')">A ByteRoc Program</button>
+      </div>
+
+      <!-- BEFORE -->
+      <div id="flow-before">
+        <div class="flow-grid">
+          <div class="flow-col flow-col-before">
+            <div class="flow-col-label">What you probably have</div>
+            <div class="flow-node node-filled">
+              <div class="node-icon node-icon-em"><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 8l10 7 10-7"/></svg></div>
+              Welcome Email (1 email)
+              <span class="node-revenue">~$0.20 RPR</span>
+            </div>
+            <div class="flow-connector"></div>
+            <div class="flow-node node-empty">
+              <div class="node-icon node-icon-red"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></div>
+              Cart Recovery (Klaviyo default)
+              <span style="color:var(--reddk);font-size:11px;margin-left:auto">3% recovery</span>
+            </div>
+            <div class="flow-connector"></div>
+            <div class="flow-node node-missing">
+              <div class="node-icon" style="background:var(--s2)"><svg viewBox="0 0 24 24" style="width:13px;height:13px;stroke:var(--mud);fill:none;stroke-width:2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+              Post-purchase sequence — missing
+            </div>
+            <div class="flow-connector"></div>
+            <div class="flow-node node-missing">
+              <div class="node-icon" style="background:var(--s2)"><svg viewBox="0 0 24 24" style="width:13px;height:13px;stroke:var(--mud);fill:none;stroke-width:2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+              Win-back / Re-engagement — missing
+            </div>
+            <div class="flow-connector"></div>
+            <div class="flow-node node-missing">
+              <div class="node-icon" style="background:var(--s2)"><svg viewBox="0 0 24 24" style="width:13px;height:13px;stroke:var(--mud);fill:none;stroke-width:2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+              VIP / Loyalty program — missing
+            </div>
+            <div class="flow-connector"></div>
+            <div class="flow-node node-missing">
+              <div class="node-icon" style="background:var(--s2)"><svg viewBox="0 0 24 24" style="width:13px;height:13px;stroke:var(--mud);fill:none;stroke-width:2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+              Browse abandonment — missing
+            </div>
+          </div>
+          <div class="flow-col flow-col-after">
+            <div class="flow-col-label">What this costs you monthly</div>
+            <div style="background:rgba(226,75,74,.07);border:1px solid rgba(226,75,74,.2);border-radius:10px;padding:20px">
+              <div style="font-family:'Syne',sans-serif;font-weight:800;font-size:36px;color:var(--red);letter-spacing:-.03em;line-height:1;margin-bottom:8px" id="before-gap">$8,400+</div>
+              <div style="font-size:13px;color:var(--reddk);opacity:.85;margin-bottom:16px">estimated monthly revenue gap<br>for a $50K/mo Shopify store</div>
+              <div style="font-size:12px;color:var(--reddk);opacity:.65;line-height:1.65">This estimate is based on industry benchmarks: 70% cart abandonment rate, 3% recovery on default sequence vs 12% on optimised 3-email sequence. Actual gap varies by store size and traffic.</div>
+            </div>
+            <div style="margin-top:16px;background:rgba(226,75,74,.05);border:1px dashed rgba(226,75,74,.2);border-radius:8px;padding:14px">
+              <div style="font-size:12px;font-weight:600;color:var(--reddk);margin-bottom:8px">Missing flows breakdown</div>
+              <div style="font-size:12px;color:var(--reddk);opacity:.8;line-height:1.8">Post-purchase upsell: ~$800–$2,000/mo<br>Win-back sequence: ~$600–$1,500/mo<br>VIP loyalty program: ~$400–$1,200/mo<br>Browse abandonment: ~$300–$800/mo</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- AFTER -->
+      <div id="flow-after" style="display:none">
+        <div class="flow-grid">
+          <div class="flow-col flow-col-after">
+            <div class="flow-col-label">A ByteRoc-built Klaviyo program</div>
+            <div class="flow-node node-filled">
+              <div class="node-icon node-icon-em"><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 8l10 7 10-7"/></svg></div>
+              Welcome Series (3 emails)
+              <span class="node-revenue">~$1.20 RPR</span>
+            </div>
+            <div class="flow-connector"></div>
+            <div class="flow-node node-filled">
+              <div class="node-icon node-icon-em"><svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/></svg></div>
+              Cart Recovery (3-email sequence)
+              <span class="node-revenue">~$3.65 RPR</span>
+            </div>
+            <div class="flow-connector"></div>
+            <div class="flow-node node-filled">
+              <div class="node-icon node-icon-em"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></div>
+              Post-Purchase + Upsell (4 emails)
+              <span class="node-revenue">~$2.10 RPR</span>
+            </div>
+            <div class="flow-connector"></div>
+            <div class="flow-node node-filled">
+              <div class="node-icon node-icon-em"><svg viewBox="0 0 24 24"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 11-2.12-9.36L23 10"/></svg></div>
+              Win-Back / Re-engagement (3 emails)
+              <span class="node-revenue">~$1.80 RPR</span>
+            </div>
+            <div class="flow-connector"></div>
+            <div class="flow-node node-filled">
+              <div class="node-icon node-icon-em"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+              VIP Tier &amp; Loyalty Program
+              <span class="node-revenue">~$2.40 RPR</span>
+            </div>
+            <div class="flow-connector"></div>
+            <div class="flow-node node-filled">
+              <div class="node-icon node-icon-em"><svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
+              Browse Abandonment (2 emails)
+              <span class="node-revenue">~$0.90 RPR</span>
+            </div>
+          </div>
+          <div class="flow-col flow-col-after">
+            <div class="flow-col-label">What this generates monthly</div>
+            <div style="background:rgba(0,229,160,.07);border:1px solid rgba(0,229,160,.25);border-radius:10px;padding:20px">
+              <div style="font-family:'Syne',sans-serif;font-weight:800;font-size:36px;color:var(--em);letter-spacing:-.03em;line-height:1;margin-bottom:8px">35–45%</div>
+              <div style="font-size:13px;color:var(--emdk);opacity:.85;margin-bottom:16px">of total store revenue from email<br>for a $50K/mo Shopify store = <strong>$17.5K–$22.5K/mo</strong></div>
+              <div style="font-size:12px;color:var(--emdk);opacity:.65;line-height:1.65">These are industry benchmarks for top-performing eCommerce brands on Klaviyo. Your actual results depend on list size, current performance, and traffic volume — all of which we assess in your free audit.</div>
+            </div>
+            <div style="margin-top:16px;background:rgba(0,229,160,.05);border:1px solid rgba(0,229,160,.15);border-radius:8px;padding:14px">
+              <div style="font-size:12px;font-weight:600;color:var(--emdk);margin-bottom:8px">What ByteRoc builds in 2 weeks</div>
+              <div style="font-size:12px;color:var(--emdk);opacity:.8;line-height:1.8">✓ All flows built, designed, and live<br>✓ Advanced segmentation configured<br>✓ A/B testing framework running<br>✓ Monthly campaign calendar live<br>✓ Full reporting dashboard set up</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CALCULATOR -->
+<section class="section ow2" id="calculator">
+  <div class="wrap">
+    <div style="max-width:640px;margin-bottom:8px">
+      <span class="pill pill-lt rv">Revenue calculator</span>
+      <h2 class="fd sz2 rv d1" style="color:var(--tink)">Calculate your exact<br>email revenue gap</h2>
+      <p style="font-size:16px;color:var(--tbody);line-height:1.7;margin-top:14px" class="rv d2">Enter your store's numbers and see in real time how much revenue your current email setup is leaving on the table — and what it should be generating.</p>
+    </div>
+    <div class="calc-wrap rv d2">
+      <div class="calc-grid">
+        <div class="calc-inputs">
+          <div class="input-group">
+            <div class="input-label">
+              <span>Monthly store revenue</span>
+              <span class="input-val" id="lbl-rev">$50,000</span>
+            </div>
+            <div class="calc-input-wrap">
+              <div class="calc-prefix">$</div>
+              <input class="calc-inp" type="number" id="inp-rev" value="50000" min="5000" max="5000000" oninput="calcGap()">
+            </div>
+          </div>
+          <div class="input-group">
+            <div class="input-label">
+              <span>Average order value</span>
+              <span class="input-val" id="lbl-aov">$75</span>
+            </div>
+            <div class="calc-input-wrap">
+              <div class="calc-prefix">$</div>
+              <input class="calc-inp" type="number" id="inp-aov" value="75" min="10" max="5000" oninput="calcGap()">
+            </div>
+          </div>
+          <div class="input-group">
+            <div class="input-label">
+              <span>Current email % of revenue: <span id="lbl-cur-pct" style="color:var(--emdk);font-weight:700">10%</span></span>
+            </div>
+            <input type="range" class="range-track" id="inp-cur" min="1" max="45" value="10" oninput="calcGap()">
+            <div style="display:flex;justify-content:space-between;font-size:11px;color:var(--tlt);margin-top:3px"><span>1%</span><span>Industry avg 27%</span><span>45%</span></div>
+          </div>
+          <div class="input-group">
+            <div class="input-label">
+              <span>Target email % (top brands): <span id="lbl-tgt-pct" style="color:var(--emdk);font-weight:700">38%</span></span>
+            </div>
+            <input type="range" class="range-track" id="inp-tgt" min="20" max="50" value="38" oninput="calcGap()">
+            <div style="display:flex;justify-content:space-between;font-size:11px;color:var(--tlt);margin-top:3px"><span>20%</span><span>35% benchmark</span><span>50%</span></div>
+          </div>
+          <div style="background:var(--ow);border-radius:8px;padding:12px 14px;font-size:12px;color:var(--tlt);line-height:1.6;margin-top:4px">
+            📌 Based on Klaviyo benchmarks for top-performing Shopify stores. Your actual gap may be higher or lower depending on list size, current deliverability, and automation setup.
+          </div>
+        </div>
+
+        <div class="calc-result" id="calc-result">
+          <div class="result-label">Your estimated monthly email revenue gap</div>
+          <div class="result-gap" id="gap-val">$14,000</div>
+          <div class="result-sub" id="result-sub-text">You're currently generating <strong id="cur-rev-txt" style="color:var(--cream2)">$5,000</strong>/mo from email. Top brands at your revenue level generate <strong id="tgt-rev-txt" style="color:var(--em)">$19,000</strong>/mo — a gap of <strong id="gap-txt" style="color:var(--em)">$14,000</strong> every month.</div>
+          <div class="result-kpis" style="margin-bottom:16px">
+            <div class="kpi">
+              <div class="kpi-v" id="kpi-cur">$5,000</div>
+              <div class="kpi-l">Current monthly email revenue</div>
+            </div>
+            <div class="kpi">
+              <div class="kpi-v em" id="kpi-tgt">$19,000</div>
+              <div class="kpi-l">Potential monthly email revenue</div>
+            </div>
+            <div class="kpi">
+              <div class="kpi-v" id="kpi-annual" style="color:var(--cream)">$168,000</div>
+              <div class="kpi-l">Annual revenue opportunity</div>
+            </div>
+            <div class="kpi">
+              <div class="kpi-v ab" id="kpi-roi">7.8×</div>
+              <div class="kpi-l">Est. ROI on Growth plan</div>
+            </div>
+          </div>
+          <a href="#audit" class="btn bp" style="width:100%;justify-content:center">
+            Start Capturing This Revenue
+            <svg class="bico" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <p style="font-size:11px;color:var(--mud);text-align:center;margin-top:8px">Free 48-hour audit · No commitment required</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 5-MINUTE AUDIT SCORE -->
+<section class="section dark" id="audit">
+  <div class="dots"></div>
+  <div class="wrap">
+    <div style="max-width:640px;margin-bottom:40px">
+      <span class="pill pill-dk rv">Free email health score</span>
+      <h2 class="fd sz2 cr-w rv d1">Get your Email Health Score<br>in 2 minutes</h2>
+      <p style="font-size:16px;color:var(--csub);line-height:1.7;margin-top:14px" class="rv d2">Answer 5 quick questions about your current email setup. We'll generate your personalised score and show you the specific gaps — then deliver your full 14-point audit in 48 hours.</p>
+    </div>
+
+    <div class="audit-wrap rv d2">
+      <div class="audit-progress" id="audit-progress">
+        <div class="ap current" id="ap1"></div>
+        <div class="ap" id="ap2"></div>
+        <div class="ap" id="ap3"></div>
+        <div class="ap" id="ap4"></div>
+        <div class="ap" id="ap5"></div>
+      </div>
+
+      <!-- Q1 -->
+      <div class="audit-step active" id="q1">
+        <div class="audit-q">What email platform are you using?</div>
+        <div class="audit-q-sub">This tells us what's possible — some platforms have far more automation capability than others.</div>
+        <div class="audit-options">
+          <div class="audit-opt" onclick="selectOpt(this,'q1','klaviyo',9)">
+            <div class="audit-opt-icon"></div>Klaviyo
+          </div>
+          <div class="audit-opt" onclick="selectOpt(this,'q1','mailchimp',6)">
+            <div class="audit-opt-icon"></div>Mailchimp
+          </div>
+          <div class="audit-opt" onclick="selectOpt(this,'q1','omnisend',7)">
+            <div class="audit-opt-icon"></div>Omnisend
+          </div>
+          <div class="audit-opt" onclick="selectOpt(this,'q1','other',5)">
+            <div class="audit-opt-icon"></div>Other / Not sure
+          </div>
+        </div>
+        <div class="audit-nav">
+          <span class="audit-step-count">Question 1 of 5</span>
+          <button class="btn bp" onclick="nextQ(2)" id="btn-q1" style="opacity:.4;pointer-events:none" disabled>Next →</button>
+        </div>
+      </div>
+
+      <!-- Q2 -->
+      <div class="audit-step" id="q2">
+        <div class="audit-q">Do you have a live abandoned cart recovery sequence?</div>
+        <div class="audit-q-sub">This is where most Shopify stores lose the most recoverable revenue — and most are running the bare minimum.</div>
+        <div class="audit-options">
+          <div class="audit-opt" onclick="selectOpt(this,'q2','cart_full',9)">
+            <div class="audit-opt-icon"></div>Yes — 3+ emails with good timing and copy
+          </div>
+          <div class="audit-opt" onclick="selectOpt(this,'q2','cart_basic',5)">
+            <div class="audit-opt-icon"></div>Yes — 1 or 2 basic emails
+          </div>
+          <div class="audit-opt" onclick="selectOpt(this,'q2','cart_default',2)">
+            <div class="audit-opt-icon"></div>Just the Klaviyo / platform default
+          </div>
+          <div class="audit-opt" onclick="selectOpt(this,'q2','cart_none',0)">
+            <div class="audit-opt-icon"></div>No cart recovery emails at all
+          </div>
+        </div>
+        <div class="audit-nav">
+          <button class="btn bg" onclick="prevQ(1)" style="font-size:13px;padding:9px 18px">← Back</button>
+          <span class="audit-step-count">Question 2 of 5</span>
+          <button class="btn bp" onclick="nextQ(3)" id="btn-q2" style="opacity:.4;pointer-events:none" disabled>Next →</button>
+        </div>
+      </div>
+
+      <!-- Q3 -->
+      <div class="audit-step" id="q3">
+        <div class="audit-q">How many emails are in your welcome series?</div>
+        <div class="audit-q-sub">Your welcome series is the highest-converting email type — open rates average 83.6%. Most brands waste this by sending just one email.</div>
+        <div class="audit-options">
+          <div class="audit-opt" onclick="selectOpt(this,'q3','welcome_4plus',9)">
+            <div class="audit-opt-icon"></div>4 or more emails with a clear sequence
+          </div>
+          <div class="audit-opt" onclick="selectOpt(this,'q3','welcome_2_3',6)">
+            <div class="audit-opt-icon"></div>2–3 emails
+          </div>
+          <div class="audit-opt" onclick="selectOpt(this,'q3','welcome_1',3)">
+            <div class="audit-opt-icon"></div>Just 1 welcome email
+          </div>
+          <div class="audit-opt" onclick="selectOpt(this,'q3','welcome_none',0)">
+            <div class="audit-opt-icon"></div>No welcome series
+          </div>
+        </div>
+        <div class="audit-nav">
+          <button class="btn bg" onclick="prevQ(2)" style="font-size:13px;padding:9px 18px">← Back</button>
+          <span class="audit-step-count">Question 3 of 5</span>
+          <button class="btn bp" onclick="nextQ(4)" id="btn-q3" style="opacity:.4;pointer-events:none" disabled>Next →</button>
+        </div>
+      </div>
+
+      <!-- Q4 -->
+      <div class="audit-step" id="q4">
+        <div class="audit-q">Do you have a post-purchase email sequence?</div>
+        <div class="audit-q-sub">After someone buys, what happens? This is where upsell, review requests, loyalty, and LTV are built — or lost.</div>
+        <div class="audit-options">
+          <div class="audit-opt" onclick="selectOpt(this,'q4','post_full',9)">
+            <div class="audit-opt-icon"></div>Yes — upsell, review ask, loyalty, and re-order sequence
+          </div>
+          <div class="audit-opt" onclick="selectOpt(this,'q4','post_basic',5)">
+            <div class="audit-opt-icon"></div>Basic — just a thank-you or review request
+          </div>
+          <div class="audit-opt" onclick="selectOpt(this,'q4','post_shipping',2)">
+            <div class="audit-opt-icon"></div>Only automated shipping updates
+          </div>
+          <div class="audit-opt" onclick="selectOpt(this,'q4','post_none',0)">
+            <div class="audit-opt-icon"></div>Nothing after the order confirmation
+          </div>
+        </div>
+        <div class="audit-nav">
+          <button class="btn bg" onclick="prevQ(3)" style="font-size:13px;padding:9px 18px">← Back</button>
+          <span class="audit-step-count">Question 4 of 5</span>
+          <button class="btn bp" onclick="nextQ(5)" id="btn-q4" style="opacity:.4;pointer-events:none" disabled>Next →</button>
+        </div>
+      </div>
+
+      <!-- Q5 -->
+      <div class="audit-step" id="q5">
+        <div class="audit-q">What percentage of your revenue comes from email?</div>
+        <div class="audit-q-sub">Be honest — this is where we benchmark your starting point and show you the gap.</div>
+        <div class="audit-options">
+          <div class="audit-opt" onclick="selectOpt(this,'q5','rev_30plus',9)">
+            <div class="audit-opt-icon"></div>30%+ — email is a major revenue channel
+          </div>
+          <div class="audit-opt" onclick="selectOpt(this,'q5','rev_20_30',6)">
+            <div class="audit-opt-icon"></div>15–30%
+          </div>
+          <div class="audit-opt" onclick="selectOpt(this,'q5','rev_10_20',3)">
+            <div class="audit-opt-icon"></div>Under 15%
+          </div>
+          <div class="audit-opt" onclick="selectOpt(this,'q5','rev_dontknow',1)">
+            <div class="audit-opt-icon"></div>I don't track it / not sure
+          </div>
+        </div>
+        <div class="audit-nav">
+          <button class="btn bg" onclick="prevQ(4)" style="font-size:13px;padding:9px 18px">← Back</button>
+          <span class="audit-step-count">Question 5 of 5</span>
+          <button class="btn bp" onclick="showScore()" id="btn-q5" style="opacity:.4;pointer-events:none" disabled>Get My Score →</button>
+        </div>
+      </div>
+
+      <!-- SCORE RESULT -->
+      <div class="audit-step" id="q-score">
+        <div class="score-result">
+          <div class="score-circle" id="score-circle">
+            <div class="score-num" id="score-num" style="color:var(--red)">2.8</div>
+            <div class="score-denom">/ 10</div>
+          </div>
+          <div class="score-title" id="score-title">Significant gaps detected</div>
+          <div class="score-desc" id="score-desc">Your email program has major opportunities sitting untouched. The good news: these are fixable, fast. Here's a preview of what your full audit will show:</div>
+          <div class="score-gaps" id="score-gaps-list"></div>
+          <div style="background:var(--s2);border:1px solid var(--bd);border-radius:10px;padding:20px;text-align:left;margin-bottom:24px">
+            <div style="font-size:11px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:var(--em);margin-bottom:10px">Your full 14-point audit will also cover:</div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px">
+              <div style="font-size:12px;color:var(--csub);display:flex;gap:6px;align-items:flex-start"><span style="color:var(--em);flex-shrink:0">→</span>Deliverability score and inbox placement</div>
+              <div style="font-size:12px;color:var(--csub);display:flex;gap:6px;align-items:flex-start"><span style="color:var(--em);flex-shrink:0">→</span>List segmentation health check</div>
+              <div style="font-size:12px;color:var(--csub);display:flex;gap:6px;align-items:flex-start"><span style="color:var(--em);flex-shrink:0">→</span>Campaign performance vs benchmarks</div>
+              <div style="font-size:12px;color:var(--csub);display:flex;gap:6px;align-items:flex-start"><span style="color:var(--em);flex-shrink:0">→</span>Template design quality review</div>
+              <div style="font-size:12px;color:var(--csub);display:flex;gap:6px;align-items:flex-start"><span style="color:var(--em);flex-shrink:0">→</span>SPF, DKIM, DMARC setup check</div>
+              <div style="font-size:12px;color:var(--csub);display:flex;gap:6px;align-items:flex-start"><span style="color:var(--em);flex-shrink:0">→</span>Revenue attribution and gap analysis</div>
+              <div style="font-size:12px;color:var(--csub);display:flex;gap:6px;align-items:flex-start"><span style="color:var(--em);flex-shrink:0">→</span>Opt-in strategy and list growth</div>
+              <div style="font-size:12px;color:var(--csub);display:flex;gap:6px;align-items:flex-start"><span style="color:var(--em);flex-shrink:0">→</span>Priority action plan (ranked by revenue impact)</div>
+            </div>
+          </div>
+          
+          <form class="form-box" action="../process.php" method="POST">
+  <div class="form-title">Get Your Complete Audit — Free</div>
+  <div class="form-sub">Delivered in writing within 48 hours. No call required. Yours to keep forever.</div>
+  
+  <input type="hidden" name="form_type" value="score_audit_form">
+
+  <div class="field">
+    <label for="f-name">Your name</label>
+    <input type="text" id="f-name" name="user_name" placeholder="Sarah Johnson" autocomplete="name" required>
+  </div>
+  <div class="field">
+    <label for="f-email">Email address</label>
+    <input type="email" id="f-email" name="user_email" placeholder="sarah@yourstore.com" autocomplete="email" required>
+  </div>
+  <div class="field">
+    <label for="f-store">Your Shopify store URL</label>
+    <input type="url" id="f-store" name="user_url" placeholder="https://yourstore.com" required>
+  </div>
+  <div class="field">
+    <label for="f-rev">Monthly revenue (approximate)</label>
+    <select id="f-rev" name="user_revenue" required>
+      <option value="">Select range...</option>
+      <option value="Under $10K/month">Under $10K/month</option>
+      <option value="$10K – $50K/month">$10K – $50K/month</option>
+      <option value="$50K – $200K/month">$50K – $200K/month</option>
+      <option value="$200K – $500K/month">$200K – $500K/month</option>
+      <option value="$500K+/month">$500K+/month</option>
+    </select>
+  </div>
+  
+  <button type="submit" class="submit-btn">
+    Send Me My Free Audit
+    <svg style="width:16px;height:16px;stroke:var(--ink);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+  </button>
+
+  <div style="display: flex;justify-content: center; align-items: center; margin-top: 20px;">
+    <a href="mailto:hello@byteroc.com" class="btn btn--ghost" style="margin: auto;">Book a Strategy Call</a>
+  </div>
+  <div class="form-note">48-hour delivery · No credit card · No sales call unless you want one · Keep the report forever</div>
+</form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="section ow">
+  <div class="wrap">
+    <div style="text-align:center;margin-bottom:clamp(36px,5vw,56px)">
+      <span class="pill pill-lt rv">No complexity. No commitment.</span>
+      <h2 class="fd sz2 rv d1" style="color:var(--tink)">How ByteRoc works</h2>
+      <p style="font-size:16px;color:var(--tbody);line-height:1.7;max-width:520px;margin:14px auto 0" class="rv d2">Three steps. Your email program goes from broken to generating 35%+ of revenue. You focus on the product — we handle everything else.</p>
+    </div>
+    <div class="hiw-steps rv d2">
+      <div class="hiw-step">
+        <div class="hiw-num">1</div>
+        <h3>Free 48-Hour Audit</h3>
+        <p>We review your entire email setup — flows, campaigns, deliverability, templates, and KPIs. You receive a written report with every gap ranked by revenue impact.</p>
+        <span class="hiw-badge" style="background:var(--ems);color:var(--emdk)">Free — always</span>
+      </div>
+      <div class="hiw-step">
+        <div class="hiw-num">2</div>
+        <h3>We Build Everything</h3>
+        <p>Your dedicated team builds all flows, campaigns, templates, segmentation, and strategy from scratch — in your brand, your voice, your Klaviyo account. Done in 2 weeks.</p>
+        <span class="hiw-badge" style="background:var(--abs);color:var(--abdk)">2-week turnaround</span>
+      </div>
+      <div class="hiw-step">
+        <div class="hiw-num">3</div>
+        <h3>We Run It Monthly</h3>
+        <p>Ongoing campaigns, flow optimisation, A/B testing, list hygiene, and monthly reporting — all handled by your dedicated team. You review. You approve. You grow.</p>
+        <span class="hiw-badge" style="background:var(--ems);color:var(--emdk)">Month-to-month</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT YOU GET -->
+<section class="section dark" id="offer">
+  <div class="dots"></div>
+  <div class="wrap">
+    <div style="text-align:center;margin-bottom:clamp(36px,5vw,56px)">
+      <span class="pill pill-dk rv">The offer</span>
+      <h2 class="fd sz2 cr-w rv d1">Start with a free audit.<br>No commitment. No call.</h2>
+      <p style="font-size:16px;color:var(--csub);line-height:1.7;max-width:520px;margin:14px auto 0" class="rv d2">Most agencies make you get on a call before they'll tell you anything. ByteRoc sends you a complete, actionable report first — because you should see the quality of our thinking before spending a dollar.</p>
+    </div>
+    <div class="offer-box rv d2">
+      <div class="offer-grid">
+        <div>
+          <div class="label" style="color:var(--em);margin-bottom:14px">What's included in your free audit</div>
+          <div class="offer-items">
+            <div class="offer-item">
+              <div class="offer-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+              <span>Full Klaviyo / ESP account review — every flow, every campaign, every gap</span>
+            </div>
+            <div class="offer-item">
+              <div class="offer-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+              <span>Revenue attribution analysis — what email is generating vs what it should generate</span>
+            </div>
+            <div class="offer-item">
+              <div class="offer-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+              <span>Deliverability audit — inbox placement, SPF/DKIM/DMARC, sender reputation score</span>
+            </div>
+            <div class="offer-item">
+              <div class="offer-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+              <span>Template and design quality review — does it match your brand and convert?</span>
+            </div>
+            <div class="offer-item">
+              <div class="offer-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+              <span>Campaign benchmarking — your open rates, click rates, and RPR vs Klaviyo industry data</span>
+            </div>
+            <div class="offer-item">
+              <div class="offer-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+              <span>Priority action plan — every opportunity ranked by revenue impact, with specific recommendations</span>
+            </div>
+            <div class="offer-item">
+              <div class="offer-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+              <span>14-point checklist — delivered as a written report you keep forever, even if you don't work with us</span>
+            </div>
+          </div>
+          <div style="background:var(--s2);border:1px solid var(--bd);border-radius:10px;padding:14px;margin-top:4px">
+            <div style="font-size:12px;font-weight:600;color:var(--csub);margin-bottom:4px">Why is this free?</div>
+            <div style="font-size:12px;color:var(--mud);line-height:1.65">Because we believe you should see the quality of ByteRoc's strategic thinking before committing to anything. The audit demonstrates our expertise better than any sales call could. If we can't find at least 3 significant revenue opportunities in your email program, we'll say so.</div>
+          </div>
+        </div>
+        <form class="form-box" action="../process.php" method="POST">
+  <div class="form-title">Get Your Free Email Audit</div>
+  <div class="form-sub">Delivered within 48 hours. No commitment, no sales pressure, no call required.</div>
+  
+  <input type="hidden" name="form_type" value="offer_audit_form">
+
+  <div class="field">
+    <label for="o-name">Your name</label>
+    <input type="text" id="o-name" name="user_name" placeholder="Sarah Johnson" required>
+  </div>
+  <div class="field">
+    <label for="o-email">Work email</label>
+    <input type="email" id="o-email" name="user_email" placeholder="sarah@yourstore.com" required>
+  </div>
+  <div class="field">
+    <label for="o-store">Your Shopify store URL</label>
+    <input type="url" id="o-store" name="user_url" placeholder="https://yourstore.com" required>
+  </div>
+  <div class="field">
+    <label for="o-platform">Email platform you use</label>
+    <select id="o-platform" name="user_platform" required>
+      <option value="">Select platform...</option>
+      <option value="Klaviyo">Klaviyo</option>
+      <option value="Mailchimp">Mailchimp</option>
+      <option value="Omnisend">Omnisend</option>
+      <option value="Shopify Email">Shopify Email</option>
+      <option value="Other">Other</option>
+    </select>
+  </div>
+  
+  <button type="submit" class="submit-btn">
+    Request My Free Audit
+    <svg style="width:16px;height:16px;stroke:var(--ink);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+  </button>
+
+  <div style="display: flex;justify-content: center; align-items: center; margin-top: 20px;">
+    <a href="mailto:hello@byteroc.com" class="btn btn--ghost" style="margin: auto;">Book a Strategy Call</a>
+  </div>
+  <div class="form-note">Delivered in 48 hours · 100% free · No credit card · No call required</div>
+</form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GUARANTEE -->
+<div class="guarantee">
+  <div class="wrap">
+    <div class="guarantee-inner">
+      <div class="g-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+      <div class="g-text" style="flex:1">
+        <h3>The ByteRoc 60-Day Promise</h3>
+        <p>If you don't see measurable improvement in your email metrics within 60 days of launch, we'll continue working for free until you do. We stand behind results, not just deliverables.</p>
+      </div>
+      <a href="#offer" class="btn bi" style="background:transparent;border:1.5px solid var(--emdk);color:var(--emdk);flex-shrink:0">Hold us to it →</a>
+    </div>
+  </div>
+</div>
+
+<!-- FAQ -->
+<section class="section ow2" id="faq">
+  <div class="wrap">
+    <div style="max-width:660px;margin-bottom:32px">
+      <span class="pill pill-lt rv">Common questions</span>
+      <h2 class="fd sz2 rv d1" style="color:var(--tink)">Honest answers to the questions<br>you're already thinking</h2>
+    </div>
+    <div class="faq-list rv d2">
+      <div class="faq-item">
+        <div class="faq-q"><h3>Is the audit actually free, or is there a catch?</h3><div class="faq-tog"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></div>
+        <div class="faq-ans"><p>It's genuinely free, permanently, with no catch. You receive a complete written report delivered within 48 hours. No call required to get it. No automatic billing. We do this because we believe the audit demonstrates our strategic thinking better than any sales presentation — and because it gives you real value whether or not you work with us. The only ask is honest feedback on what you found useful.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q"><h3>Do I have to sign a contract or commit to anything?</h3><div class="faq-tog"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></div>
+        <div class="faq-ans"><p>No contracts, no minimum term, no exit fees. Every ByteRoc retainer is month-to-month. You give 30 days' notice and you're done — with everything we've built still in your account and fully owned by you. We operate this way because agencies that lock clients into contracts are compensating for results that don't speak for themselves. Our goal is to earn your business every single month through performance.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q"><h3>What do I keep if I stop working with ByteRoc?</h3><div class="faq-tog"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></div>
+        <div class="faq-ans"><p>Everything. 100%, permanently. Every flow, every template, every campaign, every strategy document we've created belongs to you from the day we build it. Your Klaviyo account remains yours. Your list remains yours. Your automation flows remain yours. We don't hold anything back or make it difficult to leave — because we don't want you to stay unless you're genuinely happy with the results.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q"><h3>How quickly can I expect to see results?</h3><div class="faq-tog"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></div>
+        <div class="faq-ans"><p>Most clients see their monthly plan cost recovered within the first 30–45 days through abandoned cart flow improvements alone. Wider email revenue attribution typically reaches 25–35% within 60–90 days of all flows being live and optimised. That said, results depend on your current list size, traffic volume, and existing performance — which is exactly what your free audit will scope out before any commitment is made.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q"><h3>Is copywriting and design included in the monthly price?</h3><div class="faq-tog"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></div>
+        <div class="faq-ans"><p>Yes — full email copywriting and design are included on every plan, with no separate creative fee. Many agencies charge extra for "creative work" which means their advertised retainer price is significantly lower than the real total cost. At ByteRoc, what you see in the pricing is what you pay — copywriting, design, strategy, management, and reporting all included.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q"><h3>What if my list is small or I'm just starting out?</h3><div class="faq-tog"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></div>
+        <div class="faq-ans"><p>List size matters less than list quality and setup. We work with Shopify stores from $30K/month upward — and the infrastructure we build scales with you. A smaller list with a properly built program consistently outperforms a large list with no strategy. Our free audit will tell you honestly whether you're at a stage where ByteRoc will deliver the ROI you need.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="section dark fcta">
+  <div class="dots"></div>
+  <div class="wrap" style="position:relative;z-index:1">
+    <span class="pill pill-dk rv" style="margin:0 auto 16px">Zero commitment</span>
+    <h2 class="fd rv d1" style="font-size:clamp(28px,4.5vw,50px);color:var(--cream)">
+      Still deciding?<br>
+      <span class="em-w">The audit is free.</span>
+    </h2>
+    <p class="rv d2" style="font-size:clamp(14px,1.3vw,17px);color:var(--csub);line-height:1.75;max-width:540px;margin:16px auto 32px">Get a complete written review of your email program — every gap, every opportunity, every recommendation ranked by revenue impact. Delivered in 48 hours. The worst outcome: you get an actionable roadmap for free and do it yourself.</p>
+    <div class="fcta-btns rv d3">
+      <a href="#offer" class="btn bp">
+        Get My Free Email Audit
+        <svg class="bico" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+      <a href="/" class="btn bg">View full website</a>
+    </div>
+    <div class="trust-row rv d4">
+      <span class="trust-tag">Free — always</span>
+      <span class="trust-tag">48-hour delivery</span>
+      <span class="trust-tag">No commitment</span>
+      <span class="trust-tag">No call required</span>
+      <span class="trust-tag">Keep the report forever</span>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap footer-inner">
+    <a href="/" class="logo"><span class="b">Byte</span><span class="r">Roc</span></a>
+    <div class="footer-links">
+      <a href="/">Home</a>
+      <a href="/pricing">Pricing</a>
+      <a href="mailto:hello@byteroc.com">hello@byteroc.com</a>
+    </div>
+    <div class="footer-copy">© 2026 ByteRoc. All rights reserved.</div>
+  </div>
+</footer>
+
+<script>
+(function(){
+'use strict';
+
+// ── Nav scroll ──
+var nav = document.getElementById('nav');
+window.addEventListener('scroll', function(){ nav.classList.toggle('scrolled', window.scrollY > 40); }, {passive:true});
+
+// ── Scroll reveal ──
+var rvObs = new IntersectionObserver(function(e){
+  e.forEach(function(x){ if(x.isIntersecting){ x.target.classList.add('in'); rvObs.unobserve(x.target); }});
+},{threshold:0.08,rootMargin:'0px 0px -20px 0px'});
+document.querySelectorAll('.rv').forEach(function(el){ rvObs.observe(el); });
+
+// ── Animated counters ──
+var countObs = new IntersectionObserver(function(e){
+  e.forEach(function(x){
+    if(x.isIntersecting){
+      var el = x.target;
+      var target = parseFloat(el.getAttribute('data-target'));
+      if(!target) return;
+      var suffix = el.textContent.includes('%') ? '%' : '';
+      var start = 0; var duration = 1400; var startTime = null;
+      function step(ts){
+        if(!startTime) startTime = ts;
+        var p = Math.min((ts-startTime)/duration,1);
+        var eased = 1 - Math.pow(1-p, 3);
+        el.textContent = Math.round(eased * target) + (suffix || '%');
+        if(p < 1) requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+      countObs.unobserve(el);
+    }
+  });
+},{threshold:0.5});
+document.querySelectorAll('[data-target]').forEach(function(el){ countObs.observe(el); });
+
+// ── Float animation on email cards ──
+var cards = ['ec1','ec2','ec3'];
+var offsets = [0, 800, 1600];
+function floatCards(){
+  var t = Date.now();
+  cards.forEach(function(id, i){
+    var el = document.getElementById(id);
+    if(!el) return;
+    var y = Math.sin((t + offsets[i]) / 2000) * 6;
+    var r = (i === 0 ? -2 : i === 1 ? 1.5 : -1) + Math.sin((t + offsets[i]) / 3000) * 0.5;
+    el.style.transform = 'translateY(' + y + 'px) rotate(' + r + 'deg)';
+  });
+  requestAnimationFrame(floatCards);
+}
+floatCards();
+
+// ── Flow visualiser toggle ──
+window.showFlow = function(which){
+  document.getElementById('flow-before').style.display = which === 'before' ? 'block' : 'none';
+  document.getElementById('flow-after').style.display = which === 'after' ? 'block' : 'none';
+  document.getElementById('btn-before').classList.toggle('active', which === 'before');
+  document.getElementById('btn-after').classList.toggle('active', which === 'after');
+};
+
+// ── Calculator ──
+function fmt(n){
+  if(n >= 1000000) return '$' + (n/1000000).toFixed(1) + 'M';
+  if(n >= 1000) return '$' + Math.round(n/1000) + 'K';
+  return '$' + Math.round(n);
+}
+window.calcGap = function(){
+  var rev = parseFloat(document.getElementById('inp-rev').value) || 50000;
+  var cur = parseFloat(document.getElementById('inp-cur').value) || 10;
+  var tgt = parseFloat(document.getElementById('inp-tgt').value) || 38;
+  document.getElementById('lbl-rev').textContent = fmt(rev);
+  document.getElementById('lbl-cur-pct').textContent = cur + '%';
+  document.getElementById('lbl-tgt-pct').textContent = tgt + '%';
+  var curRev = rev * cur / 100;
+  var tgtRev = rev * tgt / 100;
+  var gap = tgtRev - curRev;
+  var annual = gap * 12;
+  var roi = (gap / 1800).toFixed(1) + '×';
+  document.getElementById('gap-val').textContent = fmt(gap);
+  document.getElementById('cur-rev-txt').textContent = fmt(curRev);
+  document.getElementById('tgt-rev-txt').textContent = fmt(tgtRev);
+  document.getElementById('gap-txt').textContent = fmt(gap);
+  document.getElementById('kpi-cur').textContent = fmt(curRev);
+  document.getElementById('kpi-tgt').textContent = fmt(tgtRev);
+  document.getElementById('kpi-annual').textContent = fmt(annual);
+  document.getElementById('kpi-roi').textContent = roi;
+  document.getElementById('calc-result').classList.add('highlight');
+  setTimeout(function(){ document.getElementById('calc-result').classList.remove('highlight'); }, 600);
+};
+window.calcGap();
+
+// ── Audit Score Tool ──
+var auditAnswers = { q1: null, q2: null, q3: null, q4: null, q5: null };
+var auditScores  = { q1: null, q2: null, q3: null, q4: null, q5: null };
+
+window.selectOpt = function(el, qid, val, score){
+  auditAnswers[qid] = val;
+  auditScores[qid] = score;
+  el.closest('.audit-options').querySelectorAll('.audit-opt').forEach(function(o){ o.classList.remove('selected'); });
+  el.classList.add('selected');
+  var btn = document.getElementById('btn-' + qid);
+  if(btn){ btn.disabled = false; btn.style.opacity = '1'; btn.style.pointerEvents = 'auto'; }
+};
+
+window.nextQ = function(n){
+  document.querySelectorAll('.audit-step').forEach(function(s){ s.classList.remove('active'); });
+  document.getElementById('q' + n).classList.add('active');
+  updateProgress(n);
+};
+window.prevQ = function(n){ window.nextQ(n); };
+
+function updateProgress(n){
+  for(var i = 1; i <= 5; i++){
+    var el = document.getElementById('ap' + i);
+    if(!el) continue;
+    el.classList.remove('done','current');
+    if(i < n) el.classList.add('done');
+    else if(i === n) el.classList.add('current');
+  }
+}
+
+window.showScore = function(){
+  // Calculate score
+  var total = 0; var maxPossible = 45;
+  ['q1','q2','q3','q4','q5'].forEach(function(q){ total += (auditScores[q] || 0); });
+  var score = ((total / maxPossible) * 10).toFixed(1);
+  var scoreNum = parseFloat(score);
+
+  // Determine gaps based on answers
+  var gaps = [];
+  if(!auditAnswers.q2 || auditAnswers.q2 === 'cart_none' || auditAnswers.q2 === 'cart_default' || auditAnswers.q2 === 'cart_basic'){
+    gaps.push('Your cart recovery sequence is either missing or under-optimised — recovering 3% of carts instead of the possible 10–15%. Estimated monthly impact: $3,000–$12,000+ depending on your traffic.');
+  }
+  if(!auditAnswers.q3 || auditAnswers.q3 === 'welcome_none' || auditAnswers.q3 === 'welcome_1'){
+    gaps.push('Your welcome series is sending 1 email or nothing — missing the highest-converting email sequence in Klaviyo. Welcome emails average 83.6% open rate. A 3-email sequence earns 320% more revenue than a single email.');
+  }
+  if(!auditAnswers.q4 || auditAnswers.q4 === 'post_none' || auditAnswers.q4 === 'post_shipping'){
+    gaps.push('No post-purchase sequence means customers buy once and never come back. Without upsell, review, and repurchase flows, your customers leave and never return — major LTV and repeat revenue lost every month.');
+  }
+  if(auditAnswers.q5 === 'rev_10_20' || auditAnswers.q5 === 'rev_dontknow'){
+    gaps.push('Email is under 15% of your revenue — the industry average for top Shopify stores is 27–40%. The gap between your current contribution and what is possible is exactly what your full audit will quantify.');
+  }
+  if(gaps.length === 0){
+    gaps.push('Your email program has a solid foundation. Your full audit will identify the optimisation opportunities and advanced strategies that will push you from good to exceptional.');
+  }
+
+  // Set title and colour by score
+  var titleEl = document.getElementById('score-title');
+  var descEl = document.getElementById('score-desc');
+  var circleEl = document.getElementById('score-circle');
+  var numEl = document.getElementById('score-num');
+  numEl.textContent = score;
+
+  if(scoreNum < 4){
+    numEl.style.color = 'var(--red)';
+    circleEl.style.borderColor = 'var(--red)';
+    titleEl.textContent = 'Major revenue gaps detected';
+    descEl.textContent = 'Your email program has significant untapped potential. The gaps below represent real monthly revenue that a properly built program would be capturing right now.';
+  } else if(scoreNum < 7){
+    numEl.style.color = 'var(--ab)';
+    circleEl.style.borderColor = 'var(--ab)';
+    titleEl.textContent = 'Good foundation, clear gaps to close';
+    descEl.textContent = 'You have some infrastructure in place but key revenue opportunities are still missing. The gaps below show where the biggest upside sits in your specific setup.';
+  } else {
+    numEl.style.color = 'var(--em)';
+    circleEl.style.borderColor = 'var(--em)';
+    titleEl.textContent = 'Solid program — optimisation opportunities found';
+    descEl.textContent = 'Your email fundamentals are in good shape. Your full audit will identify the advanced optimisations — segmentation depth, A/B testing frameworks, and flow improvements — that separate good from exceptional.';
+  }
+
+  // Render gap items
+  var list = document.getElementById('score-gaps-list');
+  list.innerHTML = '';
+  gaps.forEach(function(g){
+    var d = document.createElement('div');
+    d.className = 'score-gap-item';
+    d.innerHTML = '<span class="score-gap-x">→</span><span>' + g + '</span>';
+    list.appendChild(d);
+  });
+
+  // Update progress to all done
+  for(var i = 1; i <= 5; i++){
+    var ap = document.getElementById('ap' + i);
+    if(ap){ ap.classList.remove('current'); ap.classList.add('done'); }
+  }
+
+  document.querySelectorAll('.audit-step').forEach(function(s){ s.classList.remove('active'); });
+  document.getElementById('q-score').classList.add('active');
+};
+
+// ── Form submissions ──
+function handleSubmit(btn, msg){
+  btn.innerHTML = '✓ ' + msg;
+  btn.style.background = 'var(--emdk)';
+  btn.disabled = true;
+}
+window.submitAudit = function(btn){
+  var name = document.getElementById('f-name').value.trim();
+  var email = document.getElementById('f-email').value.trim();
+  var store = document.getElementById('f-store').value.trim();
+  if(!name || !email || !store){ return; }
+  handleSubmit(btn, "Audit request received — we'll be in touch within 48 hours");
+};
+window.submitOffer = function(btn){
+  var name = document.getElementById('o-name').value.trim();
+  var email = document.getElementById('o-email').value.trim();
+  if(!name || !email){ return; }
+  handleSubmit(btn, "Received — your free audit arrives within 48 hours");
+};
+
+// ── Smooth scroll ──
+document.querySelectorAll('a[href^="#"]').forEach(function(a){
+  a.addEventListener('click', function(e){
+    var id = a.getAttribute('href');
+    var el = document.querySelector(id);
+    if(el){ e.preventDefault(); window.scrollTo({top: el.getBoundingClientRect().top + window.scrollY - 70, behavior:'smooth'}); }
+  });
+});
+
+// ── FAQ ──
+document.querySelectorAll('.faq-q').forEach(function(q){
+  q.addEventListener('click', function(){
+    var item = q.parentElement;
+    var isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(function(i){ i.classList.remove('open'); });
+    if(!isOpen) item.classList.add('open');
+  });
+});
+
+})();
+</script>
+</body>
+</html>

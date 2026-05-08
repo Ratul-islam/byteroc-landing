@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Request Received — ByteRoc</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="icon" type="image/x-icon" sizes="32x32" href="../assets/main.svg"/>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #090B11;
+      --s1: #0E1118;
+      --s2: #13161F;
+      --bd: #222840;
+      --mud: #4A5470;
+      --cream: #E8EBE4;
+      --cream2: #C4C9BE;
+      --csub: #8B93A8;
+      --cdim: #525C74;
+      --white: #fff;
+      --em: #00E5A0;
+      --emh: #00CC8E;
+      --emd: rgba(0, 229, 160, .12);
+      --mw: 1100px;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      font-family: "DM Sans", sans-serif;
+      background: var(--ink);
+      color: var(--cream);
+      line-height: 1.6;
+      overflow-x: hidden;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    a { text-decoration: none; color: inherit; }
+
+    /* Layout */
+    .wrap {
+      max-width: var(--mw);
+      margin: 0 auto;
+      padding: 0 clamp(18px, 4vw, 48px);
+      width: 100%;
+    }
+
+    .dark {
+      background: var(--ink);
+      position: relative;
+      overflow: hidden;
+      flex: 1;
+      display: flex;
+      align-items: center;
+    }
+
+    .dark > .dots {
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(var(--bd) 1px, transparent 1px);
+      background-size: 26px 26px;
+      opacity: .45;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .dark > .wrap {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Type */
+    .fd {
+      font-family: "Syne", sans-serif;
+      font-weight: 800;
+      letter-spacing: -.035em;
+      line-height: 1.1;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 14px;
+      border-radius: 100px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+      background: var(--bd);
+      color: var(--em);
+    }
+
+    .pill::before {
+      content: "";
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: currentColor;
+      flex-shrink: 0;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-family: "DM Sans", sans-serif;
+      font-weight: 600;
+      font-size: 15px;
+      border-radius: 9px;
+      transition: all .2s;
+      cursor: pointer;
+      border: 1.5px solid transparent;
+      white-space: nowrap;
+      padding: 14px 28px;
+    }
+
+    .btn:active { transform: scale(.975); }
+
+    .bp {
+      background: var(--em);
+      color: var(--ink);
+      border-color: var(--em);
+    }
+
+    .bp:hover {
+      background: var(--emh);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0, 229, 160, .25);
+    }
+
+    .bg {
+      background: transparent;
+      color: var(--cream2);
+      border-color: rgba(232, 235, 228, .22);
+    }
+
+    .bg:hover {
+      border-color: rgba(232, 235, 228, .44);
+    }
+
+    /* Nav */
+    #nav {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 999;
+      padding: 24px 0;
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-family: "Syne", sans-serif;
+      font-weight: 800;
+      font-size: 20px;
+      letter-spacing: -.04em;
+    }
+
+    .logo .b { color: var(--cream); }
+    .logo .r { color: var(--em); }
+
+    /* Footer */
+    footer {
+      background: var(--s1);
+      border-top: 1px solid var(--bd);
+      padding: 22px 0;
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      font-size: 12px;
+      color: var(--mud);
+      margin-left: 20px;
+      transition: color .2s;
+    }
+
+    .footer-links a:hover { color: var(--em); }
+
+    /* Custom Thank You Elements */
+    .ty-icon {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background: rgba(0, 229, 160, .12);
+      border: 2px solid rgba(0, 229, 160, .3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 24px auto;
+    }
+
+    .ty-icon svg {
+      width: 32px;
+      height: 32px;
+      stroke: var(--em);
+      stroke-width: 2.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      fill: none;
+    }
+
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin: 40px auto;
+      max-width: 720px;
+      text-align: left;
+    }
+
+    .step-box {
+      background: var(--s2);
+      border: 1px solid var(--bd);
+      border-radius: 12px;
+      padding: 20px;
+    }
+
+    .step-num {
+      font-family: "Syne", sans-serif;
+      font-weight: 800;
+      font-size: 18px;
+      color: var(--em);
+      margin-bottom: 8px;
+    }
+
+    .step-title {
+      font-weight: 600;
+      font-size: 14px;
+      color: var(--cream);
+      margin-bottom: 4px;
+    }
+
+    .step-desc {
+      font-size: 12.5px;
+      color: var(--csub);
+      line-height: 1.5;
+    }
+
+    @media(max-width: 768px) {
+      .steps-grid { grid-template-columns: 1fr; gap: 12px; }
+      .btn-row { flex-direction: column; align-items: stretch; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav id="nav">
+    <div class="wrap nav-inner">
+      <a href="/" class="logo"><span class="b">Byte</span><span class="r">Roc</span></a>
+      <a href="mailto:work@byteroc.com" style="font-size: 13px; color: var(--csub); font-weight: 600;">work@byteroc.com</a>
+    </div>
+  </nav>
+
+  <section class="dark">
+    <div class="dots"></div>
+    <div class="wrap" style="text-align: center; padding-top: 100px; padding-bottom: 60px;">
+      
+      <div class="ty-icon">
+        <svg viewBox="0 0 24 24">
+          <polyline points="20 6 9 17 4 12"></polyline>
+        </svg>
+      </div>
+
+      <span class="pill">Request Received</span>
+      
+      <h1 class="fd" style="font-size: clamp(32px, 5vw, 52px); color: var(--cream); margin-bottom: 16px;">
+        You're on the list.
+      </h1>
+      
+      <p style="font-size: clamp(15px, 1.5vw, 18px); color: var(--csub); max-width: 540px; margin: 0 auto; line-height: 1.7;">
+        We've successfully received your details. Your customized, written audit is being prepared and will be delivered to your inbox within the next 48 hours.
+      </p>
+
+      <div class="steps-grid">
+        <div class="step-box">
+          <div class="step-num">01</div>
+          <div class="step-title">We audit your setup</div>
+          <div class="step-desc">Our team is manually reviewing your store/site to map exactly where revenue is leaking.</div>
+        </div>
+        <div class="step-box">
+          <div class="step-num">02</div>
+          <div class="step-title">Watch your inbox</div>
+          <div class="step-desc">Keep an eye out for an email from <strong>work@byteroc.com</strong> (check your spam folder just in case).</div>
+        </div>
+        <div class="step-box">
+          <div class="step-num">03</div>
+          <div class="step-title">Implement & grow</div>
+          <div class="step-desc">Use the report to fix the gaps yourself, or hire us to build the perfect sequence for you.</div>
+        </div>
+      </div>
+
+      <div class="btn-row" style="display: flex; justify-content: center; gap: 16px;">
+        <a href="/" class="btn bp">Return to Homepage</a>
+        <a href="mailto:work@byteroc.com" class="btn bg">Book a Strategy Call</a>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap footer-inner">
+      <a href="/" class="logo"><span class="b">Byte</span><span class="r">Roc</span></a>
+      <div class="footer-links">
+        <a href="/">Home</a>
+        <a href="/pricing">Pricing</a>
+        <a href="mailto:work@byteroc.com">work@byteroc.com</a>
+      </div>
+      <div style="font-size: 11px; color: var(--mud);">&copy; 2026 ByteRoc. All rights reserved.</div>
+    </div>
+  </footer>
+
+</body>
+</html>
