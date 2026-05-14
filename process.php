@@ -112,13 +112,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $mail->isSMTP();                                            
         $mail->Host       = 'byteroc.com';                 
         $mail->SMTPAuth   = true;                          
-        $mail->Username   = 'test@byteroc.com';            
-        $mail->Password   = 'thisisatestpass';
+        $mail->Username   = 'work@byteroc.com';            
+        $mail->Password   = 'djwo nyff gvwr dxrz';
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;   
         $mail->Port       = 465;                           
 
-        $mail->setFrom('test@byteroc.com', 'Byteroc Website'); 
-        $mail->addAddress('test@byteroc.com');                 
+        $mail->setFrom('work@byteroc.com', 'Byteroc Website'); 
+        $mail->addAddress('work@byteroc.com');                 
         
         if (isset($_POST['user_email']) && isset($_POST['user_name'])) {
             $mail->addReplyTo($_POST['user_email'], $_POST['user_name']);
